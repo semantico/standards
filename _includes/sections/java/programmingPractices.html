@@ -8,12 +8,12 @@
 		<p>This section contains general good programming practices, that should be employed at Semantico.</p>
 	</div>
 
-	<h3 id="accessVariables">Providing Access to Instance and Class Variables</h3>
+	<h2 id="accessVariables">Providing Access to Instance and Class Variables</h2>
 	
 	<p>Don't make any instance or class variable public without good reason. Often, instance variables don't need to be
         explicitly set or gotten-often that happens as a side effect of method calls.</p>
 
-    <h3 id="classVariablesMethods">Referring to Class Variables and Methods</h3>
+    <h2 id="classVariablesMethods">Referring to Class Variables and Methods</h2>
 
     <p>Avoid using an object to access a class (static) variable or method. Use a class name instead. For example:</p>
 
@@ -26,19 +26,19 @@
         anObject.classMethod();    //AVOID!
     </textarea>
 
-    <h3 id="numericalConstants">Numerical Constants</h3>
+    <h2 id="numericalConstants">Numerical Constants</h2>
 
     <p>Numerical constants (literals) should <b>not</b> be coded directly, except for -1, 0, and 1, which can appear in a for loop as counter values.</p>
 
     <p>Use a singularly defined <a href="#constants">constant</a>!</p>
 
-    <h3 id="nonNumericalConstants">String Constants</h3>
+    <h2 id="nonNumericalConstants">String Constants</h2>
 
     <p>String constants (literals) should <b>not</b> be coded directly/hard-coded.</p>
 
     <p>Use a singularly defined <a href="#constants">constant</a>!</p>
 
-    <h3 id="variableAssignments">Variable Assignments</h3>
+    <h2 id="variableAssignments">Variable Assignments</h2>
 
     <p>Avoid using an object to access a class (static) variable or method. Use a class name instead. For example:</p>
 
@@ -64,7 +64,7 @@
     </textarea>
 
 
-    <h3 id="parentheses">Parentheses</h3>
+    <h2 id="parentheses">Parentheses</h2>
 
     <p>It is generally a good idea to use parentheses liberally in expressions involving mixed operators to avoid operator
         precedence problems.</p>
@@ -78,7 +78,7 @@
     </textarea>
 
 
-    <h3 id="expressionsConditional">Expressions before `?' in the Conditional Operator</h3>
+    <h2 id="expressionsConditional">Expressions before `?' in the Conditional Operator</h2>
 
     <p>If an expression containing a binary operator appears before the ? in the ternary ?: operator, it should be
         parenthesized.</p>
