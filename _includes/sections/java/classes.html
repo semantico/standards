@@ -1,0 +1,89 @@
+<!-- #### CLASSES SECTION #### -->
+
+<section id="classes">
+
+	<div class="intro has-icon">
+		<h1>Classes</h1>
+		
+		<p>The root of Java development comes from class source files, and several things should be adhered to when
+            creating or editing a .java file.</p>
+	</div>
+	
+	<h2 id="beginningComments">Beginning Comments</h2>
+	
+	<p>All classes comment that lists the class name and description, author, version information,
+        date, and copyright notice:</p>
+    <p>This comes under the package name and import statements and just above the class declaration.</p>
+
+    <figure class="preCode">Class start</figure>
+    <textarea class="brush:java">
+       package com.semantico.example;
+
+       import java.util.*;
+
+       /*
+        * Classname and description
+        *
+        * Version information
+        *
+        * Copyright notice
+        *
+        * @author Dean Pullen
+        * @since 04-May-2012
+        */
+       public class ClassNameHere {
+           ...
+       }
+    </textarea>
+
+	<h2 id="packageAndImportStatements">Package and Import Statements</h2>
+
+	<p>The first non-comment line of most Java source files is a package statement. After that, import statements can follow. For example:</p>
+
+	<figure class="preCode">Package and Import Statements</figure>
+	<textarea class="brush:java">
+        package java.awt;
+
+        import java.awt.peer.CanvasPeer;
+    </textarea>
+
+    <h2 id="classAndInterfaceDeclarations">Class and Interface Declarations</h2>
+
+    <p>The following describes the parts of a class or interface declaration, in the order that they should appear.</p>
+
+
+    <p><b>1.</b> Class/interface documentation comment (/**...*/)<p></p>
+
+
+    <p><b>2.</b> Class or interface statement</p>
+
+
+    <p><b>3.</b> Class/interface implementation comment (/*...*/), if necessary</p>
+
+
+    <p>[This comment should contain any class-wide or interface-wide information that wasn't appropriate for the class/interface documentation comment]</p>
+
+
+    <p><b>4.</b> Class (static) variables</p>
+
+
+    <p>[First the public class variables, then the protected, then package level (no access modifier), and then the private]</p>
+
+
+    <p><b>5.</b> Instance variables</p>
+
+
+    <p>[First public, then protected, then package level (no access modifier), and then private]</p>
+
+
+    <p><b>6.</b> Constructors</p>
+
+    <p><b>7.</b> Methods</p>
+
+    <p>[These methods should be grouped by functionality rather than by scope or accessibility. For example,
+    private class method can be in between two public instance methods. The goal is to make reading and understanding the code easier]
+    </p>
+
+
+
+</section>

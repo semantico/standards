@@ -1,0 +1,74 @@
+<!DOCTYPE html public "Semantico: Transforming Digital Publishing">
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>Semantico: Code standards & Guidelines for Java and Front-end Development</title>
+    <link rel="stylesheet" href="/static/css/standards.css" />
+    <script src="/static/js/modernizr.js"></script>
+</head>
+<body>
+    <header id="masthead" class="top-bar" role="banner">
+        <a class="logo" href="http://www.semantico.com">Semantico: Transforming Digital Publishing</a>
+        <h1>Code standards & Guidelines</h1>
+        <nav id="site-navigation">
+            <ul class="inline-list">
+                <li><a href="/java">Java</a></li>
+                <li><a href="/front-end">Front-end</a></li>
+                <li><a class="social-link" href="//twitter.com/semantico" target="_blank">Twitter</a></li>
+                <li><a class="social-link" href="//facebook.com" target="_blank">Facebook</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        {% if page.sidebar == true %}
+            <nav id="page-navigation" class="aside">
+                <h2 class="h1">Table of Contents</h2>
+                <ul id="toc" class="toc">
+
+                </ul>
+            </nav>
+        {% endif %}
+
+        <div id="content" role="main">
+            {{ content }}
+        </div>
+
+
+        <footer id="" role="contentinfo">
+
+        </footer>
+
+    </div>
+
+    <script>
+        (function () {
+
+            window._gaq = [['_setAccount', 'UA-XXX'], ['_trackPageview'], ['_trackPageLoadTime'],
+                ['_setSiteSpeedSampleRate', 10]];
+            var zep     = navigator.userAgent.indexOf("MSIE") == -1;
+
+            yepnope([{
+                    test:     zep,
+                    yep:      '/static/js/zepto.js',
+                    nope:     '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js',
+                    complete: function () {
+                        !zep && !window.jQuery && yepnope('/static/js/jquery-1.7.2.min.js');
+                    }
+                },
+                {
+                    load:     '/static/js/standards.js'
+                },
+                {
+                    test:     Modernizr.history,
+                    yep:      '/static/js/pages.js'
+                }]);
+            // GA is loaded at the same time as the other scripts because it has no dependencies
+            yepnope(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
+
+        })();
+    </script>
+</body>
+</html>
+

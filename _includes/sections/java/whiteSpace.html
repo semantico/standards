@@ -1,0 +1,92 @@
+<!-- #### WHITE-SPACE SECTION #### -->
+
+<section id="whiteSpace">
+
+	<div class="intro has-icon">
+		<h1>White Space</h1>
+		
+		<p>This section includes info on where white space should appear in a Java source file.</p>
+        <p>Different uses of whitespace is one of the main contributors of non-standard formatting, examine this
+            section closely.</p>
+	</div>
+	
+	<h3 id="blankLines">Blank Lines</h3>
+	
+	<p>Blank lines improve readability by setting off sections of code that are logically related.</p>
+
+    <p>Two blank lines should always be used in the following circumstances:</p>
+
+    <ui>
+        <li>Between sections of a source file</li>
+        <li>Between class and interface definitions</li>
+    </ui>
+
+    <p></p>
+
+    <p>One blank line should always be used in the following circumstances:</p>
+
+    <ui>
+        <li>Between methods</li>
+        <li>Between the local variables in a method and its first statement</li>
+        <li>Before a block or single-line comment</li>
+        <li>Between logical sections inside a method to improve readability</li>
+    </ui>
+
+
+	<h3 id="blankSpaces">Blank Spaces</h3>
+	
+	<p>Blank spaces should be used in the following circumstances:</p>
+
+    <ui>
+        <li>A keyword followed by a parenthesis should be separated by a space. Example:
+            <p></p>
+            <textarea class="brush:java">
+                while (true) {
+                    ...
+                }
+            </textarea>
+            Note that a blank space should not be used between a method name and its opening parenthesis.
+            This helps to distinguish keywords from method calls.
+            <p></p>
+        </li>
+
+        <li>A blank space should appear after commas in argument lists.
+            <p></p>
+        </li>
+
+        <li>All binary operators except . should be separated from their operands by spaces. Blank spaces should never
+            separate unary operators such as unary minus, increment ("++"), and decrement ("--") from their operands. Example:
+            <p></p>
+            <textarea class="brush:java">
+                a += c + d;
+                a = (a + b) / (c * d);
+
+                while (d++ = s++) {
+                    n++;
+                }
+                printSize("size is " + foo + "\n");
+            </textarea>
+            <p></p>
+        </li>
+        <li>
+            The expressions in a for statement should be separated by blank spaces. Example:
+            <p></p>
+            <textarea class="brush:java">
+                for (expr1; expr2; expr3)
+            </textarea>
+            <p></p>
+        </li>
+        <li>
+            Casts should be followed by a blank space. Examples:
+            <p></p>
+            <textarea class="brush:java">
+                myMethod((byte) aNum, (Object) x);
+                myMethod((int) (cp + 5), ((int) (i + 3)) + 1);
+            </textarea>
+            <p></p>
+        </li>
+    </ui>
+
+
+
+</section>

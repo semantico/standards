@@ -1,0 +1,71 @@
+<!-- #### OVERALL EXAMPLES SECTION #### -->
+
+<section id="overallExamples">
+
+	<div class="intro has-icon">
+		<h1>Examples</h1>
+		
+		<p>Here you can see a variety of examples, that use the standards and formatting we've outlined throughout
+            the document.</p>
+	</div>
+
+    <h3 id="classVariablesMethods">Comments/JavaDoc Example</h3>
+
+    <p>Here is an overall example of using JavaDocs and comments:</p>
+
+    <figure class="preCode">Examples:</figure>
+    <textarea class="brush:html">
+        package com.semantico.example;
+
+        import java.blah.blahdy.BlahBlah;
+
+        /**
+         * Blah.java This is a class that displays some example code.
+         *
+         * v1.0
+         *
+         * Copyright (c) 2012 Semantico Ltd
+         *
+         * @author Dean Pullen
+         * @since 04-May-2012
+         */
+        public class Blah extends SomeClass {
+
+            /* A class implementation comment can go here. */
+
+            /** classVar1 documentation comment */
+            public static int classVar1;
+
+            /** instanceVar1 documentation comment */
+            public Object instanceVar1;
+
+            /** instanceVar2 documentation comment */
+            protected int instanceVar2;
+
+            /** instanceVar3 documentation comment */
+            private Object[] instanceVar3;
+
+            /** constructor Blah documentation comment*/
+            public Blah() {
+                // ...implementation goes here...
+            }
+
+            /** method doSomething documentation comment */
+            public void doSomething() {
+                // ...implementation goes here...
+            }
+
+            /**
+             * method doSomethingElse documentation comment
+             *
+             * @param someParam description
+             * @return a Person object
+             */
+            public Person doSomethingElse(Object someParam) {
+                // ...implementation goes here...
+            }
+        }
+    </textarea>
+
+
+</section>
