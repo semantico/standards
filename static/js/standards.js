@@ -24,7 +24,8 @@ semantico.load = semantico.load || function () {
             var $this, text, id;
             $this = $(el);
             text  = $this.text();
-            el.id = '_' + toSelector(text);
+            id    = '_' + toSelector(text);
+            el.id = id;
             subs  += '<li><a href="#' + id + '">' + text + '</a></li>';
         });
         if (h2s.length != 0) {

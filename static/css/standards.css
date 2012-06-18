@@ -513,6 +513,7 @@ table {
 /*
  * Fonts:
  * base: 14px/18px
+ * Using a 18px grid with all horizontal measurements as a %age
  */
 
 body {
