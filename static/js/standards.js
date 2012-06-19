@@ -2,7 +2,7 @@ var semantico = semantico || {};
 
 semantico.load = semantico.load || function () {
 
-    var toSelectorStr, getTop, titles, toc, tocList, pageNav, origPos, posToc;
+    var toSelectorStr, getTop, titles, toc, tocList, navWrap, pageNav, origPos, posToc;
 
     toSelector = function (str) {
         str = '' + str;
@@ -33,25 +33,23 @@ semantico.load = semantico.load || function () {
             text  = $this.text();
             id    = '_' + toSelector(text);
             el.id = id;
-            subs  += '<li><a href="#' + id + '">' + text + '</a></li>';
+            subs  += '<li><a class="toc-tier-2" href="#' + id + '">' + text + '</a></li>';
         });
         if (h2s.length != 0) {
-           subs = '<ul>' + subs + '</ul>';
+           subs = '<ul class="toc-sub">' + subs + '</ul>';
         }
-        toc   += '<li><a href="#' + id + '">' + text + '</a>' + subs + '</li>';
+        toc   += '<li><a class="toc-tier-1" href="#' + id + '">' + text + '</a>' + subs + '</li>';
     });
 
     tocList.html(toc);
 
-    pageNav = $('#fixed-nav');
+    navWrap = $('#fixed-nav');
+    pageNav = $('#page-navigation');
     origPos = tocList.offset().top;
 
     posToc = function (e) {
-        if (getTop() > origPos) {
-            pageNav.addClass('container-over-fixed');
-            return
-        }
-        pageNav.removeClass('container-over-fixed');
+        navWrap[getTop() > origPos ? 'addClass' : 'removeClass']('container-over-fixed')
+        pageNav.css('max-height', $(window).height());
     };
 
     posToc();
