@@ -2,15 +2,22 @@ var semantico = semantico || {};
 
 semantico.load = semantico.load || function () {
 
-    var toSelectorStr, titles, toc, tocList;
+    var toSelectorStr, getTop, titles, toc, tocList, pageNav, origPos, posToc;
 
     toSelector = function (str) {
         str = '' + str;
-        return (window.jQuery ? $.trim(str) : str.trim()).toLowerCase().replace(/\s+/g, '-');
+        return ( window.jQuery ? $.trim(str) : str.trim() ).toLowerCase().replace(/\s+/g, '-');
     }
 
-    titles = $('.intro h1:nth-child(1)');
-    toc    = "";
+    getTop = function () {
+        return window.jQuery !== undefined ? $(window).scrollTop().top : window.pageYOffset;
+    };
+
+    titles  = $('.intro h1:nth-child(1)');
+    toc     = "";
+    tocList = $('#toc')
+
+    if (tocList.length == 0) return;
 
     titles.each(function (i, el) {
         var $this, text, id, h2s, subs;
@@ -34,7 +41,21 @@ semantico.load = semantico.load || function () {
         toc   += '<li><a href="#' + id + '">' + text + '</a>' + subs + '</li>';
     });
 
-    tocList = $('#toc').html(toc);
+    tocList.html(toc);
+
+    pageNav = $('#fixed-nav');
+    origPos = tocList.offset().top;
+
+    posToc = function (e) {
+        if (getTop() > origPos) {
+            pageNav.addClass('container-over-fixed');
+            return
+        }
+        pageNav.removeClass('container-over-fixed');
+    };
+
+    posToc();
+    $(window).on('scroll', posToc);
 
 };
 
