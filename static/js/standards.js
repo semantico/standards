@@ -49,7 +49,7 @@ semantico.load = semantico.load || function () {
 
     posToc = function (e) {
         navWrap[getTop() > origPos ? 'addClass' : 'removeClass']('container-over-fixed')
-        pageNav.css('max-height', $(window).height());
+        pageNav.css('max-height', $(window).height() - 72);
     };
 
     posToc();
