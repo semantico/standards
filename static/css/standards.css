@@ -785,3 +785,19 @@ pre {
 .no-svg .intro {
     background-image: url(../img/arrow.png);
 }
+
+li.social-li {
+    margin: 0;
+}
+
+.social-link {
+    display:    block;
+    width:      30px;
+    height:     30px;
+    margin-top: 5px;
+    background: url(../img/social-media.png) 0 0;
+}
+
+.social-twitter {
+    background-position: 30px 0;
+}
