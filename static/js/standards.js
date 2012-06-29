@@ -1,29 +1,29 @@
-var semantico = semantico || {};
+var semantico = window.semantico || {};
 
 semantico.load = semantico.load || function () {
 
-    var toSelectorStr, getTop, titles, toc, tocList, navWrap, pageNav, origPos, posToc;
+    var toSelectorStr, getTop, titles, toc, tocList, navWrap, pageNav, origPos, posToc, tocItems, code;
 
-    toSelector = function (str) {
+    toSelectorStr = function (str) {
         str = '' + str;
         return ( window.jQuery ? $.trim(str) : str.trim() ).toLowerCase().replace(/\s+/g, '-');
-    }
+    };
 
-    getTop = function () {
-        return window.jQuery !== undefined ? $(window).scrollTop().top : window.pageYOffset;
+    getTop = function (e) {
+        return window.jQuery ? $(e).scrollTop().top : e.pageYOffset;
     };
 
     titles  = $('.intro h1:nth-child(1)');
     toc     = "";
-    tocList = $('#toc')
+    tocList = $('#toc');
 
-    if (tocList.length == 0) return;
+    if (tocList.length === 0) return;
 
     titles.each(function (i, el) {
         var $this, text, id, h2s, subs;
         $this = $(el);
         text  = $this.text();
-        id    = '_' + toSelector(text);
+        id    = '_' + toSelectorStr(text);
         el.id = id;
         h2s   = $('h2', $this.closest('section'));
         subs  = "";
@@ -31,14 +31,12 @@ semantico.load = semantico.load || function () {
             var $this, text, id;
             $this = $(el);
             text  = $this.text();
-            id    = '_' + toSelector(text);
+            id    = '_' + toSelectorStr(text);
             el.id = id;
             subs  += '<li><a class="toc-tier-2" href="#' + id + '">' + text + '</a></li>';
         });
-        if (h2s.length != 0) {
-           subs = '<ul class="toc-sub">' + subs + '</ul>';
-        }
-        toc   += '<li><a class="toc-tier-1" href="#' + id + '">' + text + '</a>' + subs + '</li>';
+        if (h2s.length !== 0) subs = '<ul class="toc-sub">' + subs + '</ul>';
+        toc += '<li><a class="toc-tier-1" href="#' + id + '">' + text + '</a>' + subs + '</li>';
     });
 
     tocList.html(toc);
@@ -48,12 +46,36 @@ semantico.load = semantico.load || function () {
     origPos = tocList.offset().top;
 
     posToc = function (e) {
-        navWrap[getTop() > origPos ? 'addClass' : 'removeClass']('container-over-fixed')
+        navWrap[getTop(window) > origPos ? 'addClass' : 'removeClass']('container-over-fixed');
         pageNav.css('max-height', $(window).height() - 72);
     };
 
     posToc();
     $(window).on('scroll', posToc);
+
+    tocItems = $('a', tocList);
+    $(window).on('scroll.scrollto', function (e) {
+        var t, l, i;
+        t = getTop(window);
+        l = tocItems.length;
+
+        for (i = 0; i < l; i++) {
+            
+        }
+
+    });
+
+    code = $('pre>code');
+
+    yepnope({
+        test:     code.length > 0,
+        yep:      '/static/js/highlight.pack.js',
+        callback: function () {
+            code.each(function (i, el) {
+                hljs.highlightBlock(el);
+            });
+        }
+    });
 
 };
 
