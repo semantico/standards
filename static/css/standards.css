@@ -819,3 +819,8 @@ li.social-li {
 .page-footer a:hover {
     color: #EF6B00;
 }
+
+.download-link:after {
+    content: "\2193";
+    color:   #EF6B00;
+}
