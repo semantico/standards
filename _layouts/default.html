@@ -38,7 +38,7 @@
             </nav>
         </div>
 
-        <div class="container">
+        <div class="container clearfix">
             <div id="content" role="main" class="content content-thin">
                 {{ content }}
             </div>
@@ -53,16 +53,20 @@
 
 
 
-    <footer id="" role="contentinfo">
-
+    <footer id="footer" class="page-footer" role="contentinfo">
+        <div class="container clearfix">
+            <div class="content-thin">
+                <p>&copy; <a href="http://www.semantico.com">Semantico</a> {{ site.date | date: "%Y" }} - Inspired by and based upon the <a href="http://na.isobar.com/standards">Isobar, Front-end Code Standards &amp; Best Practices</a></p>
+            </div>
+        </div>
     </footer>
 
 
     <script>
         (function () {
 
-            window._gaq = [['_setAccount', 'UA-XXX'], ['_trackPageview'], ['_trackPageLoadTime'],
-                ['_setSiteSpeedSampleRate', 10]];
+            window._gaq = [['_setAccount', 'UA-XXX'], 
+                ['_trackPageview'], ['_trackPageLoadTime'], ['_setSiteSpeedSampleRate', 10]];
             var zep     = navigator.userAgent.indexOf("MSIE") == -1;
 
             yepnope([{
