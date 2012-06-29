@@ -628,18 +628,17 @@ pre {
 
 /* == MODULES == */
 .top-bar {
-    overflow:      hidden;
     padding:       9px 0;
     border-bottom: 5px solid #EF6B00;
     margin-bottom: 18px;
     background:    #fff;
-    position:      relative;
 }
 
 .container {
     max-width: 1188px;
     padding:   0 18px;
     margin:    auto;
+    position:      relative;
 }
 
 .bar-item {
