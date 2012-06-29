@@ -648,7 +648,7 @@ pre {
 
 .logo, .logo:visited {
     display:    block;
-    width:      312px;
+    width:      315px;
     height:     61px;
     background: no-repeat url(../img/logo.svg) 0 0;
     margin:     9px 18px 0 0;
@@ -776,8 +776,13 @@ pre {
 }
 
 .intro {
-    padding:       17px 0 17px 72px; /* 18-1 for border */
+    padding:       17px 0 17px 63px; /* 18-1 for border */
     border:        1px solid #fff;
+    background:    no-repeat url(../img/arrow.svg) 9px 16px;
     border-width:  1px 0;
     margin-bottom: 18px;
+}
+
+.no-svg .intro {
+    background-image: url(../img/arrow.png);
 }

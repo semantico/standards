@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="40"
+   height="40"
+   viewBox="0 0 39.999998 39.999999"
+   id="Layer_1"
+   xml:space="preserve"><metadata
+   id="metadata3015"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs3013" />
+<g
+   transform="matrix(0.64926754,0,0,0.65397518,-164.131,2.7583243e-4)"
+   id="g2999">
+	<path
+   d="m 264.394,43.67 5.635,-5.635 -6.591,-6.631 c 0,0 -1.168,-0.936 0.088,-2.163 1.258,-1.227 6.597,-6.584 6.597,-6.584 l -5.768,-5.5 -9.896,9.878 c 0,0 -3.732,2.953 -0.021,6.626 3.71,3.675 9.956,10.009 9.956,10.009 z"
+   id="path3001"
+   style="fill:#d7d7d7" />
+	<path
+   d="m 270.176,11.597 5.635,5.635 6.632,-6.587 c 0,0 0.935,-1.17 2.162,0.088 1.226,1.256 6.584,6.593 6.584,6.593 l 5.5,-5.767 -9.879,-9.896 c 0,0 -2.954,-3.73 -6.625,-0.019 -3.676,3.711 -10.009,9.953 -10.009,9.953 z"
+   id="path3003"
+   style="fill:#d7d7d7" />
+	<path
+   d="m 302.804,16.936 -5.635,5.634 6.59,6.631 c 0,0 1.168,0.936 -0.088,2.163 -1.258,1.226 -6.596,6.584 -6.596,6.584 l 5.767,5.499 9.897,-9.878 c 0,0 3.729,-2.952 0.019,-6.625 -3.711,-3.673 -9.954,-10.008 -9.954,-10.008 z"
+   id="path3005"
+   style="fill:#d7d7d7" />
+	<path
+   d="m 296.689,49.567 -5.636,-5.635 -6.632,6.588 c 0,0 -0.936,1.169 -2.162,-0.087 -1.227,-1.257 -6.583,-6.595 -6.583,-6.595 l -5.5,5.767 9.879,9.896 c 0,0 2.953,3.729 6.626,0.019 3.673,-3.711 10.008,-9.953 10.008,-9.953 z"
+   id="path3007"
+   style="fill:#d7d7d7" />
+	<rect
+   width="20.688999"
+   height="7.586"
+   x="283.853"
+   y="26.551001"
+   id="rect3009"
+   style="fill:#d7d7d7" />
+</g>
+</svg>
