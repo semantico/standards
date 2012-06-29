@@ -13,16 +13,16 @@
 	<p>One declaration per line is recommended since it encourages commenting. In other words:</p>
 
     <figure class="preCode">Separate lines:</figure>
-    <code><pre class="java">
-        int level; // indentation level
-        int size;  // size of table
-    </pre></code>
+    <pre><code class="java">
+int level; // indentation level
+int size;  // size of table
+    </code></pre>
 
 
     <figure class="preCode">Preferred over:</figure>
-    <code><pre class="java">
-        int level, size;
-    </pre></code>
+    <pre><code class="java">
+int level, size;
+    </code></pre>
 
     <h2 id="initialization">Initialization</h2>
 
@@ -36,31 +36,31 @@
         portability within the scope.</p>
 
     <figure class="preCode">Block:</figure>
-    <code><pre class="java">
-        void myMethod() {
-            int int1 = 0;         // beginning of method block
+    <pre><code class="java">
+void myMethod() {
+    int int1 = 0;         // beginning of method block
 
-            if (condition) {
-                int int2 = 0;     // beginning of "if" block
-                ...
-             }
-        }
-    </pre></code>
+    if (condition) {
+        int int2 = 0;     // beginning of "if" block
+        ...
+     }
+}
+    </code></pre>
 
     <p>Avoid local declarations that hide declarations at higher levels. For example, do not declare the same variable name in an inner block:</p>
 
     <figure class="preCode">Block:</figure>
-    <code><pre class="java">
-        int count;
+    <pre><code class="java">
+int count;
+...
+myMethod() {
+    if (condition) {
+        int count = 0;     // AVOID!
         ...
-        myMethod() {
-            if (condition) {
-                int count = 0;     // AVOID!
-                ...
-            }
-        ...
-        }
-    </pre></code>
+    }
+...
+}
+    </code></pre>
 
     <h2 id="classAndInterfaceDeclarations">Class and Interface Declarations</h2>
 
@@ -76,19 +76,19 @@
 
 
     <figure class="preCode">Formatting:</figure>
-    <code><pre class="java">
-        class Sample extends Object {
-            int ivar1;
-            int ivar2;
+    <pre><code class="java">
+class Sample extends Object {
+    int ivar1;
+    int ivar2;
 
-            Sample(int i, int j) {
-                ivar1 = i;
-                ivar2 = j;
-            }
+    Sample(int i, int j) {
+        ivar1 = i;
+        ivar2 = j;
+    }
 
-            int emptyMethod() {}
+    int emptyMethod() {}
 
-            ...
-        }
-    </pre></code>
+    ...
+}
+    </code></pre>
 </section>

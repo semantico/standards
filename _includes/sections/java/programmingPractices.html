@@ -18,13 +18,13 @@
     <p>Avoid using an object to access a class (static) variable or method. Use a class name instead. For example:</p>
 
     <figure class="preCode">Examples:</figure>
-    <code><pre class="java">
-        classMethod();             //OK
+    <pre><code class="java">
+classMethod();             //OK
 
-        AClass.classMethod();      //OK
+AClass.classMethod();      //OK
 
-        anObject.classMethod();    //AVOID!
-    </pre></code>
+anObject.classMethod();    //AVOID!
+    </code></pre>
 
     <h2 id="numericalConstants">Numerical Constants</h2>
 
@@ -43,25 +43,25 @@
     <p>Avoid using an object to access a class (static) variable or method. Use a class name instead. For example:</p>
 
     <figure class="preCode">Avoid:</figure>
-    <code><pre class="java">
-        fooBar.fChar = barFoo.lchar = 'c'; // AVOID!
-    </pre></code>
+    <pre><code class="java">
+fooBar.fChar = barFoo.lchar = 'c'; // AVOID!
+    </code></pre>
 
     <p>Do not use embedded assignments in an attempt to improve run-time performance. This is the job of the compiler.
         Example:</p>
 
     <figure class="preCode">Avoid:</figure>
-    <code><pre class="java">
-        d = (a = b + c) + r;        // AVOID!
-    </pre></code>
+    <pre><code class="java">
+d = (a = b + c) + r;        // AVOID!
+    </code></pre>
 
     <p>Should actually be written like:</p>
 
     <figure class="preCode">Actual:</figure>
-    <code><pre class="java">
-        a = b + c;
-        d = a + r;
-    </pre></code>
+    <pre><code class="java">
+a = b + c;
+d = a + r;
+    </code></pre>
 
 
     <h2 id="parentheses">Parentheses</h2>
@@ -72,10 +72,10 @@
         programmers know precedence as well as you do.</p>
 
     <figure class="preCode">Examples:</figure>
-    <code><pre class="java">
-        if (a == b && c == d)     // AVOID!
-        if ((a == b) && (c == d)) // RIGHT
-    </pre></code>
+    <pre><code class="java">
+if (a == b && c == d)     // AVOID!
+if ((a == b) && (c == d)) // RIGHT
+    </code></pre>
 
 
     <h2 id="expressionsConditional">Expressions before `?' in the Conditional Operator</h2>
@@ -84,8 +84,8 @@
         parenthesized.</p>
 
     <figure class="preCode">Example:</figure>
-    <code><pre class="java">
-        (x >= 0) ? x : -x;
-    </pre></code>
+    <pre><code class="java">
+(x >= 0) ? x : -x;
+    </code></pre>
 
 </section>
