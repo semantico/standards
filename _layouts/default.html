@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <link rel="dns-prefetch" href="//ajax.googleapis.com" />
     <title>Semantico: Code Standards & Guidelines for Java and Front-end Development</title>
-    <link rel="stylesheet" href="/static/css/github.css" />
-    <link rel="stylesheet" href="/static/css/standards.css" />
-    <script src="/static/js/modernizr.js"></script>
+    <link rel="stylesheet" href="{{ site.host }}/static/css/github.css" />
+    <link rel="stylesheet" href="{{ site.host }}/static/css/standards.css" />
+    <script src="{{ site.host }}/static/js/modernizr.js"></script>
 </head>
 <body>
     <header id="masthead" class="top-bar" role="banner">
@@ -73,18 +73,18 @@
 
             yepnope([{
                     test:     zep,
-                    yep:      '/static/js/zepto.js',
+                    yep:      '{{ site.host }}/static/js/zepto.js',
                     nope:     '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js',
                     complete: function () {
-                        !zep && !window.jQuery && yepnope('/static/js/jquery-1.7.2.min.js');
+                        !zep && !window.jQuery && yepnope('{{ site.host }}/static/js/jquery-1.7.2.min.js');
                     }
                 },
                 {
-                    load:     '/static/js/standards.js'
+                    load:     '{{ site.host }}/static/js/standards.js'
                 },
                 {
                     test:     Modernizr.history,
-                    yep:      '/static/js/pages.js'
+                    yep:      '{{ site.host }}/static/js/pages.js'
                 }]);
             // GA is loaded at the same time as the other scripts because it has no dependencies
             yepnope(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
