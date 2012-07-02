@@ -18,14 +18,14 @@
 		<li>Use the LINK tag to include, <a href="http://blog.amodernfable.com/2008/01/21/thoughts-on-linking-to-stylesheets/">never the @import.</a>
 	
 			<figure class="preCode">Including a stylesheet</figure>
-			<textarea class="brush:html">
-				<link rel="stylesheet" type="text/css" href="myStylesheet.css" />
-			</textarea>
+			<pre><code class="html">
+&lt;link rel="stylesheet" type="text/css" href="myStylesheet.css" />
+			</code></pre>
 	
 			<figure class="preCode">Don't use inline styling</figure>
-			<textarea class="brush:html">
-				<p style="font-size: 12px; color: #FFFFFF">This is poor form, I say</p>
-			</textarea>
+			<pre><code class="html">
+&lt;p style="font-size: 12px; color: #FFFFFF">This is poor form, I say&lt;/p>
+			</code></pre>
 			
 			</li>
 
@@ -42,8 +42,8 @@
 	<p>Intimate knowledge and understanding of the CSS and browser-based box model is necessary for conquering the fundamentals of CSS layouts.</p>
 	
 	<figure class="extra">
-		<img src="img/box_model.png" alt="CSS Box Model" title="CSS Box Model" />
-		<figcaption><small>3D CSS Box Model</small> diagram by <a href="http://hicksdesign.co.uk/boxmodel/">Jon Hicks</a>.</small></figcaption>
+&lt;img src="img/box_model.png" alt="CSS Box Model" title="CSS Box Model" />
+&lt;figcaption>&lt;small>3D CSS Box Model&lt;/small> diagram by &lt;a href="http://hicksdesign.co.uk/boxmodel/">Jon Hicks&lt;/a>.&lt;/small>&lt;/figcaption>
 	</figure>
 	
 	<h3>CSS Validation</h3>
@@ -56,20 +56,20 @@
 	<p>At minimum, format CSS with selectors on one line and each property on its own line. The declarations are indented. </p>
 	<p>As an enhancement to that style, related or child styles and additional 2 or 4 spaces. That allows for hierarchical scanning and organization and makes (for some people) an easier-to-read style sheet.</p>
 	<p>Also, if you specify multiple selectors, it's a good idea to start each on new line. This prevents lines from growing long and improves readability as well as version control workflow.</p>
-    <textarea class="brush:css">
-    .post-list li a{
-		color:#A8A8A8;
-	}
-    	.post-list li a:hover{
-        	color:#000;
-        	text-decoration:none;
-     	}
-     	.post-list li .author a, 
-     	.post-list li .author a:hover{
-        	 color:#F30;
-       		 text-transform:uppercase;
-     	}
-    </textarea>
+    <pre><code class="css">
+.post-list li a{
+    color:#A8A8A8;
+}
+    .post-list li a:hover{
+        color:#000;
+        text-decoration:none;
+    }
+    .post-list li .author a, 
+    .post-list li .author a:hover{
+         color:#F30;
+         text-transform:uppercase;
+    }
+    </code></pre>
     <p>For multiple author environments, single line CSS should be avoided because it can cause issues with version control. </p>
 	<h4>Alphabetize</h4>
     <p>If you're performance obsessed <a href="http://www.barryvan.com.au/2009/08/css-minifier-and-alphabetiser/">alphabetizing CSS properties increases the odds of larger repeatable patterns being present to aid in GZIP compression</a>. </p> 
@@ -77,13 +77,13 @@
 	
 	<p>You should only give elements an ID attribute if they are unique. They should be applied to that element only and nothing else. Classes can be applied to multiple elements that share the same style properties. Things that should look and work in the same way can have the same class name.</p>
 	
-	<textarea class="brush:html">
-		<ul id="categories">
-			<li class="item">Category 1</li>
-			<li class="item">Category 2</li>
-			<li class="item">Category 3</li>
-		</ul>
-	</textarea>
+	<pre><code class="html">
+lt;ul id="categories">
+    &lt;li class="item">Category 1</li>
+    &lt;li class="item">Category 2</li>
+    &lt;li class="item">Category 3</li>
+&lt;/ul>
+	</code></pre>
 	
 	<h3>Naming Conventions for Selectors</h3>
 	
@@ -144,21 +144,21 @@
 	
 	
 	<figure class="preCode">Correct</figure>
-	<textarea class="brush:css">
-		#selector {
-			font-size: 13px;
-			line-height: 1.5;  /*  13 * 1.5 = 19.5 ~ Rounds to 20px. */
-		}
-	</textarea>
+	<pre><code class="css">
+#selector {
+    font-size: 13px;
+    line-height: 1.5;  /*  13 * 1.5 = 19.5 ~ Rounds to 20px. */
+}
+	</code></pre>
 	
 	<figure class="preCode">Incorrect</figure>
-	<textarea class="brush:css">
-		/*  Equivalent to 13px font-size and 20px line-height, but only if the browser default text size is 16px. */
-		#selector {
-			font-size: 0.813em;
-			line-height: 1.25em;
-		}
-	</textarea>
+	<pre><code class="css">
+/*  Equivalent to 13px font-size and 20px line-height, but only if the browser default text size is 16px. */
+#selector {
+    font-size: 0.813em;
+    line-height: 1.25em;
+}
+	</code></pre>
 	
 	
 	<h3>Internet Explorer Bugs</h3>
@@ -167,28 +167,28 @@
 	
 	
 	<figure class="preCode">Fixing IE</figure>
-	<textarea class="brush:html">
-		<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
-		<!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
-		<!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
-		<!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
-		<!--[if !IE]><!--> <body> <!--<![endif]-->
-	</textarea>
+	<pre><code class="html">
+&lt;!--[if lt IE 7 ]> &lt;body class="ie6"> &lt;![endif]-->
+&lt;!--[if IE 7 ]>    &lt;body class="ie7"> &lt;![endif]-->
+&lt;!--[if IE 8 ]>    &lt;body class="ie8"> &lt;![endif]-->
+&lt;!--[if IE 9 ]>    &lt;body class="ie9"> &lt;![endif]-->
+&lt;!--[if !IE]>&lt;!--> &lt;body> &lt;!--&lt;![endif]-->
+	</code></pre>
 	
-	<textarea class="brush:css">
+	<pre><code class="css">
 		.box { float: left; margin-left: 20px; }
 		.ie6 .box { margin-left: 10px; }
-	</textarea>
+	</code></pre>
 	
 	<p>If you're using HTML5 (and the <a href="#h5bp">HTML5 Boilerplate</a>) we encourage the use of the <a href="http://www.modernizr.com/">Modernizer</a> JavaScript library and this pattern:</p>
 	 
-	<textarea class="brush:html">
-		<!--[if lt IE 7]> <html class="no-js ie ie6" lang="en"> <![endif]-->
-		<!--[if IE 7]>    <html class="no-js ie ie7" lang="en"> <![endif]-->
-		<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
-		<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
-		<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
-	</textarea>
+	<pre><code class="html">
+&lt;!--[if lt IE 7]> &lt;html class="no-js ie ie6" lang="en"> &lt;![endif]-->
+&lt;!--[if IE 7]>    &lt;html class="no-js ie ie7" lang="en"> &lt;![endif]-->
+&lt;!--[if IE 8]>    &lt;html class="no-js ie8" lang="en"> &lt;![endif]-->
+&lt;!--[if IE 9]>    &lt;html class="no-js ie9" lang="en"> &lt;![endif]-->
+&lt;!--[if gt IE 9]>&lt;!-->&lt;html class="no-js" lang="en">&lt;!--&lt;![endif]-->
+	</code></pre>
 <h3>Shorthand</h3>
 	
 	<p>In general, CSS shorthand is preferred because of its terseness, and the ability to later go back and add in values that are already present, such as the case with margin and padding. Developers should be aware of the <abbr title="Top Right Bottom Left">TRBL</abbr> acronym, denoting the order in which the sides of an element are defined, in a clock-wise manner: Top, Right, Bottom, Left. If <em>bottom</em> is undefined, it inherits its value from <em>top</em>. Likewise, if <em>left</em> is undefined, it inherits its value from <em>right</em>. If only the <em>top</em> value is defined, all sides inherit from that one declaration.</p>
@@ -286,19 +286,19 @@
 	
 	<p>For full cross-browser compatibility use Fontsprings' new <a href="http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax">bulletproof @font-face syntax</a> (<em>latest version as of 2/21/11</em>).</p>
 	
-	<textarea class="brush:css">
-		@font-face {
-			font-family: 'MyFontFamily';
-			src: url('myfont-webfont.eot'); 					/* IE9 Compat Modes */
-			src: url('myfont-webfont.eot?iefix') format('eot'),	/* IE6-IE8 */
-			   url('myfont-webfont.woff') format('woff'),		/* Modern Browsers */
-			   url('myfont-webfont.ttf') format('truetype'),		/* Safari, Android, iOS */
-			   url('myfont-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
-			font-weight: <font-weight>;
-			font-style: <font-style>;
-			// etc.
-		}
-	</textarea>
+	<pre><code class="css">
+@font-face {
+    font-family: 'MyFontFamily';
+    src: url('myfont-webfont.eot'); 					/* IE9 Compat Modes */
+    src: url('myfont-webfont.eot?iefix') format('eot'),	/* IE6-IE8 */
+       url('myfont-webfont.woff') format('woff'),		/* Modern Browsers */
+       url('myfont-webfont.ttf') format('truetype'),		/* Safari, Android, iOS */
+       url('myfont-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: <font-weight>;
+    font-style: <font-style>;
+    // etc.
+}
+	</code></pre>
 	
 	<p>Here's a <a href="http://www.thecssninja.com/demo/css_fontface/">working demo</a> using this version of implementation.</p>
 	
@@ -310,9 +310,9 @@
 	
 	<p>Sometimes <abbr title="Internet Explorer">IE</abbr> can have a mind of its own and will switch to compatibility mode without you knowing. Include the following in the site <code>&lt;head&gt;</code> to prevent your site from defaulting to compatibility mode:</p>
 	
-	<textarea class="brush:html">
+	<pre><code class="html">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	</textarea>
+	</code></pre>
 	
 	<hr />
 	
@@ -353,48 +353,48 @@
 	
 	<p><a href="https://code.google.com/apis/webfonts/docs/getting_started.html">Google's Webfonts API</a> essentially does the same thing as <code>@font-face</code>, it just does all the hard work for you, providing wider browser support.The major drawback to this method is the very small font library it uses. To make it work all you need to do is include the stylesheet + the font name.</p>
 	
-	<textarea class="brush:html">
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">
-	</textarea>
+	<pre><code class="html">
+		&lt;link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">
+	</code></pre>
 	
 	<p class="normalize">Then define a style for the selector you want to apply the font to:</p>
 	
-	<textarea class="brush:css">
+	<pre><code class="css">
 		CSS selector {
 			font-family: 'Font Name', serif;
 		}
-	</textarea>
+	</code></pre>
 	
 	<h3>Webfont Loader</h3>
 	
 	<p>Another option Google offers is the <a href="https://code.google.com/apis/webfonts/docs/webfont_loader.html">Webfont Loader</a> which is a JavaScript library that allows for more control than the font API does. You can also use multiple webfont providers like Typekit. To use it include the script in your page:</p>
 	
-	<textarea class="brush:javascript">
-		<script type="text/javascript">
-			WebFontConfig = { google: { families: [ 'Tangerine', 'Cantarell' ]} };
-			(function() {
-				var wf = document.createElement('script');
-				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + 
-						  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-				wf.type = 'text/javascript';
-				wf.async = 'true';
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(wf, s);
-			})();
-		</script>
-	</textarea>
+	<pre><code class="javascript">
+&lt;script type="text/javascript">
+    WebFontConfig = { google: { families: [ 'Tangerine', 'Cantarell' ]} };
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + 
+                  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+&lt;/script>
+	</code></pre>
 	
 	<p class="normalize">Including the webfont.js file this way is faster if not already using the Ajax APIs. Otherwise you should use this:</p>
 	
-	<textarea class="brush:javascript">
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<script type="text/javascript">
-			google.load("webfont", "1");
-			google.setOnLoadCallback(function() {
-				WebFont.load({ google: { families: [ 'Tangerine', 'Cantarell' ]} });
-			});
-		</script>
-	</textarea>
+	<pre><code class="javascript">
+&lt;script type="text/javascript" src="https://www.google.com/jsapi">&lt;/script>
+&lt;script type="text/javascript">
+    google.load("webfont", "1");
+    google.setOnLoadCallback(function() {
+        WebFont.load({ google: { families: [ 'Tangerine', 'Cantarell' ]} });
+    });
+&lt;/script>
+	</code></pre>
 	
 	<p>By using the Webfont Loader you have more ability to customize things including the use of more fonts, not just those in the Google Webfont library which is not large. However, it then requires you to load JavaScript, sacrificing one thing for another.</p>
 	
@@ -423,14 +423,14 @@
 	
 	<p>If you choose to use Cufon, it is highly recommended you use the <a href="http://cufon.shoqolate.com/js/cufon-yui.js">Cufon compressed version</a>. You will need to convert your font using the <a href="http://cufon.shoqolate.com/generate/">generator</a>.</p>
 	
-	<textarea class="brush:javascript">
-		<script src="cufon-yui.js" type="text/javascript"></script>
-		<script src="YourFont.font.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			Cufon.replace('h1');		// Works without a selector engine
-			Cufon.replace('#sub1'); 	// Requires a selector engine for IE 6-7
-		</script>
-	</textarea>
+	<pre><code class="javascript">
+&lt;script src="cufon-yui.js" type="text/javascript">&lt;/script>
+&lt;script src="YourFont.font.js" type="text/javascript">&lt;/script>
+&lt;script type="text/javascript">
+    Cufon.replace('h1');		// Works without a selector engine
+    Cufon.replace('#sub1'); 	// Requires a selector engine for IE 6-7
+&lt;/script>
+	</code></pre>
 	
 	<p>We recommend using Cufon sparingly since it can cause a lot of overhead if applied to a large amount of text. For more info visit the <a href="https://github.com/sorccu/cufon/wiki/">Cufon Wiki</a>.</p>
 	

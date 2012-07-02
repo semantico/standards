@@ -15,15 +15,15 @@
 	<p>Directly, manipulating the DOM is slow. Each time you access or modify a piece of it, you pay in performance. It's better to do manipulations in what PPK called "DOM Hyperspace" and then push changes into the document when the manipulations are completed. This is especially important when doing loops on collections of elements.</p>
     <p>While assigning variables to a local scope is always a good practice, caching DOM fragments and properties to local variables is especially important.</p>
 		
-	<textarea class="brush:javascript">
-	function htmlLoop() {
-		var fragment;
-		for(var i = 0; i < 1000; i++ ) {
-			fragment += '<p>a</p>';
-		}
-		document.getElementById('fragment').innerHTML += stuff;
-	}
-	</textarea>
+	<pre><code class="javascript">
+function htmlLoop() {
+    var fragment;
+    for(var i = 0; i < 1000; i++ ) {
+        fragment += '<p>a</p>';
+    }
+    document.getElementById('fragment').innerHTML += stuff;
+}
+	</code></pre>
 
 	<h3>Element Nodes</h3>
 	

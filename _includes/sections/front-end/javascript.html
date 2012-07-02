@@ -22,9 +22,9 @@
 		<li>Don't use document.write().</li>
 		<li>All Boolean variables should start with "is".
 			<figure class="preCode">Test for positive conditions</figure>
-			<textarea class="brush:js">
-			isValid = (test.value >= 4 && test.success);
-			</textarea>
+			<pre><code class="js">
+isValid = (test.value >= 4 && test.success);
+			</code></pre>
 		</li>
 		<li>Name variables and functions logically: For example: <code>popUpWindowForAd</code> rather than <code>myWindow</code>.</li>
         <li>Don't manually minify. With the exception of the traditional <code>i</code>, etc. for <code>for</code> loops, variables should be long enough to be meaningful.</li>
@@ -39,9 +39,9 @@
 	
 	  <li>Minimize global variables - the less globals you create, the better. Generally one, for your application namespace, is a good number. 
 			<figure class="preCode">When specifying any global variable, clearly identify it</figure>		
-			<textarea class="brush:js">
-			window.globalVar = { ... }
-			</textarea>
+			<pre><code class="js">
+window.globalVar = { ... }
+			</code></pre>
 		</li>
 	</ul>
 	
@@ -54,26 +54,26 @@
 	
 	
 	<figure class="preCode">Correct</figure>
-	<textarea class="brush:js">
-		for (var i = 0, j = arr.length; i < j; i++) {
-			// Do something.
-		}
-	</textarea>
+	<pre><code class="js">
+for (var i = 0, j = arr.length; i < j; i++) {
+    // Do something.
+}
+	</code></pre>
 	
 	<figure class="preCode">Incorrect</figure>
-	<textarea class="brush:js">
-		for ( var i = 0, j = arr.length; i < j; i++ )
-		{
-			// Do something.
-		}
-	</textarea>
+	<pre><code class="js">
+for ( var i = 0, j = arr.length; i < j; i++ )
+{
+    // Do something.
+}
+	</code></pre>
 	
 	<figure class="preCode">Also incorrect</figure>
-	<textarea class="brush:js">
-		for(var i=0,j=arr.length;i<j;i++){
-			// Do something.
-		}
-	</textarea>
+	<pre><code class="js">
+for(var i=0,j=arr.length;i<j;i++){
+    // Do something.
+}
+	</code></pre>
 
 
 	<h3>plugins.js and script.js</h3>
@@ -86,82 +86,82 @@
 	
 	<p>Here's what an example file might looks like, including a small table of contents. This can serve as a handy guide for what plugins are in use, including URLs for documentation, rationale for use and the like.</p>
 	
-	<textarea class="brush:js">
-	/* PLUGIN DIRECTORY
-	What you can find in this file [listed in order they appear]
-	
-		   1.) Animate Background Position - http://plugins.jquery.com/project/backgroundPosition-Effect
-		   2.) jQuery Easing Plugin - http://gsgd.co.uk/sandbox/jquery/easing/
-		   3.) jQuery Ajax Form plugin - http://jquery.malsup.com/form/#download            
-		   4.) jQuery validation plugin (form validation) - http://docs.jquery.com/Plugins/Validation
-			   -password strength
-		   5.) Styled Selects (lightweight) - http://code.google.com/p/lnet/wiki/jQueryStyledSelectOverview
-	*/
-	
-	/**
-	* 1.) Animate Background Position - http://plugins.jquery.com/project/backgroundPosition-Effect
-	* @author Alexander Farkas
-	* v. 1.21
-	*/
-	(function($) {
-	   if(!document.defaultView || !document.defaultView.getComputedStyle){ // IE6-IE8
-	   //SNIPPED
-	   };
-	})(jQuery);
-	
-	
-	/**
-	* 2.) jQuery Easing Plugin (we're not using jQuery UI as of yet) - http://gsgd.co.uk/sandbox/jquery/easing/
-	*/
-	
-	// t: current time, b: begInnIng value, c: change In value, d: duration
-	jQuery.easing['jswing'] = jQuery.easing['swing'];
-	
-	jQuery.extend( jQuery.easing,
-	{
-	   //SNIPPED
-	   
-	});
-	;(function($) {
-	   $.fn.ajaxSubmit = function(options) {
-	   //SNIPPED
-	   }
-	})(jQuery);
-	
-	/*
-	* jQuery Styled Select Boxes
-	* version: 1.1 (2009/03/24)
-	* @requires jQuery v1.2.6 or later
-	*
-	* Examples and documentation at: http://code.google.com/p/lnet/wiki/jQueryStyledSelectOverview
-	*
-	* Copyright (c) 2008 Lasar Liepins, liepins.org, liepins@gmail.com
-	*
-	* Permission is hereby granted, free of charge, to any person obtaining a copy
-	* of this software and associated documentation files (the "Software"), to deal
-	* in the Software without restriction, including without limitation the rights
-	* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-	* copies of the Software, and to permit persons to whom the Software is
-	* furnished to do so, subject to the following conditions:
-	*
-	* The above copyright notice and this permission notice shall be included in
-	* all copies or substantial portions of the Software.
-	*
-	* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-	* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-	* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-	* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-	* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-	* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-	* THE SOFTWARE.
-	*
-	*/
-	
-	jQuery.fn.styledSelect = function(settings) {
-	//SNIPPED
-		   return this;
-	};
-	</textarea>
+	<pre><code class="js">
+/* PLUGIN DIRECTORY
+What you can find in this file [listed in order they appear]
+
+       1.) Animate Background Position - http://plugins.jquery.com/project/backgroundPosition-Effect
+       2.) jQuery Easing Plugin - http://gsgd.co.uk/sandbox/jquery/easing/
+       3.) jQuery Ajax Form plugin - http://jquery.malsup.com/form/#download            
+       4.) jQuery validation plugin (form validation) - http://docs.jquery.com/Plugins/Validation
+           -password strength
+       5.) Styled Selects (lightweight) - http://code.google.com/p/lnet/wiki/jQueryStyledSelectOverview
+*/
+
+/**
+* 1.) Animate Background Position - http://plugins.jquery.com/project/backgroundPosition-Effect
+* @author Alexander Farkas
+* v. 1.21
+*/
+(function($) {
+   if(!document.defaultView || !document.defaultView.getComputedStyle){ // IE6-IE8
+   //SNIPPED
+   };
+})(jQuery);
+
+
+/**
+* 2.) jQuery Easing Plugin (we're not using jQuery UI as of yet) - http://gsgd.co.uk/sandbox/jquery/easing/
+*/
+
+// t: current time, b: begInnIng value, c: change In value, d: duration
+jQuery.easing['jswing'] = jQuery.easing['swing'];
+
+jQuery.extend( jQuery.easing,
+{
+   //SNIPPED
+   
+});
+;(function($) {
+   $.fn.ajaxSubmit = function(options) {
+   //SNIPPED
+   }
+})(jQuery);
+
+/*
+* jQuery Styled Select Boxes
+* version: 1.1 (2009/03/24)
+* @requires jQuery v1.2.6 or later
+*
+* Examples and documentation at: http://code.google.com/p/lnet/wiki/jQueryStyledSelectOverview
+*
+* Copyright (c) 2008 Lasar Liepins, liepins.org, liepins@gmail.com
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* THE SOFTWARE.
+*
+*/
+
+jQuery.fn.styledSelect = function(settings) {
+//SNIPPED
+       return this;
+};
+	</code></pre>
 
 
 	<h4>Script.js</h4>
@@ -170,42 +170,42 @@
 	
 	<p>A simplified example, using the <a href='http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/'>Markup-based unobtrusive comprehensive DOM-ready execution</a> pattern, might look something like the following:</p>
 
-	<textarea class="brush:js">     
-	/* Name: Demo
-	Author: Demo King */
-	/*demo namespace*/
-	demo = {
-	 common : {
-	   init     : function(){
-		   //initialize
-	   },
-	   finalize : function(){
-		   //finalize
-	   },
-	   config : {
-		   prop : "my value",
-		   constant : "42"
-	   }
-	 },
-	 mapping : {
-	   init     : function(){
-		   //create a map
-	   },
-	   geolocate    : function(){
-		   //geolocation is cool
-	   },
-	   geocode : function(){
-		   //look up an address or landmark
-	   },
-	   drawPolylines : function(){
-		   //draw some lines on a map
-	   },
-	   placeMarker : function(){
-		   //place markers on the map
-	   }
-	 }
-	}
-	</textarea>
+	<pre><code class="js">     
+/* Name: Demo
+Author: Demo King */
+/*demo namespace*/
+demo = {
+ common : {
+   init     : function(){
+       //initialize
+   },
+   finalize : function(){
+       //finalize
+   },
+   config : {
+       prop : "my value",
+       constant : "42"
+   }
+ },
+ mapping : {
+   init     : function(){
+       //create a map
+   },
+   geolocate    : function(){
+       //geolocation is cool
+   },
+   geocode : function(){
+       //look up an address or landmark
+   },
+   drawPolylines : function(){
+       //draw some lines on a map
+   },
+   placeMarker : function(){
+       //place markers on the map
+   }
+ }
+}
+	</code></pre>
 
 	
 	<h2>Variables, ID &amp; Class</h2>

@@ -29,29 +29,29 @@
 	<p>A nice aspect of HTML5 is that it streamlines the amount of code that is required. Meaningless attributes have been dropped, and the <code>DOCTYPE</code> declaration has been simplified significantly. Additionally, there is no need to use <code>CDATA</code> to escape inline JavaScript, formerly a requirement to meet XML strictness in XHTML.</p>
 	
 	<figure class="preCode">HTML5 Doctype</figure>
-	<textarea class="brush:html">
-		<!DOCTYPE html>
-	</textarea>
+	<pre><code class="html">
+&lt;!DOCTYPE html>
+	</code></pre>
 	
 	<h3>Character Encoding</h3>
 
 	<p>All markup should be delivered as UTF-8, as its the most friendly for internationalization. It should be designated in both the HTTP header and the head of the document.</p>
 	
 	<p>Setting the character set using &lt;meta&gt; tags.</p>
-	<textarea class="brush:html">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	</textarea>
+	<pre><code class="html">
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</code></pre>
 	
 	<p>In HTML5, just do:</p>
-	<textarea class="brush:html">
-		<meta charset="utf-8">
-	</textarea>
+	<pre><code class="html">
+&lt;meta charset="utf-8">
+	</code></pre>
 
 	<!--<h3>Use of new semantic elements</h3>
 	
 	<p>Elements such as <code>header, footer, section, article</code>, and others, can be used multiple times on a page, and more than once within one or the other even. In cases where there will be more than one of the same element, that is used for the same thing such as using <code>article</code> for each blog post of a page and each article having a <code>header</code> and <code>footer</code>, adding a class to them can help separate them from any other places you may use these elements on the page. That way you can target the elements more specifically in your CSS. However this is not always necessary, depending on the structure of the page and the way you define your selectors.</p>
 	
-	<textarea class="brush:html">
+	<pre><code class="html">
 		<header>
 			<h1>Our Blog</h1>
 		</header>
@@ -68,14 +68,14 @@
 			</header>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 		</article>
-	</textarea>
+	</code></pre>
 	
 	<p>Structuring pages cleanly allows for simplified selectors which keep the specificity level low making it easier to override selectors later on as the stylesheet grows.</p>
 	
-	<textarea class="brush:css">
+	<pre><code class="css">
 	header h1 { color: red; }
 	article header h1 { color: blue; }
-	</textarea>-->
+	</code></pre>-->
 
 	<h2>General Markup Guidelines</h2>
 
@@ -96,22 +96,22 @@
 		<li>Make use of THEAD, TBODY, and TH tags (and Scope attribute) when appropriate.
 
 			<figure class="preCode">Table markup with proper syntax (THEAD,TBODY,TH [scope])</figure>
-			<textarea class="brush:html">
-				<table summary="This is a chart of year-end returns for 2005.">
-					<thead>
-						<tr>
-							<th scope="col">Table header 1</th>
-							<th scope="col">Table header 2</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Table data 1</td>
-							<td>Table data 2</td>
-						</tr>
-					</tbody>
-				</table>
-			</textarea>
+			<pre><code class="html">
+&lt;table summary="This is a chart of year-end returns for 2005.">
+    &lt;thead>
+        &lt;tr>
+            &lt;th scope="col">Table header 1&lt;/th>
+            &lt;th scope="col">Table header 2&lt;/th>
+        &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+        &lt;tr>
+            &lt;td>Table data 1&lt;/td>
+            &lt;td>Table data 2&lt;/td>
+        &lt;/tr>
+    &lt;/tbody>
+&lt;/table>
+			</code></pre>
 		</li>
 	
 		<li>Always use title-case for headers and titles. Do not use all caps or all lowercase titles in markup, instead apply the CSS property <code>text-transform:uppercase/lowercase</code>.</li>
@@ -121,8 +121,8 @@
 	
 	<p>The HTML5 specification defines quotes around attributes as optional. For consistency with attributes that accept whitespace, all attributes should be quoted. </p> 
 	
-	<textarea class="brush:html">
-		<p class="line note" data-attribute="106">This is my paragraph of special text.</p>
-	</textarea>
+	<pre><code class="html">
+&lt;p class="line note" data-attribute="106">This is my paragraph of special text.&lt;/p>
+	</code></pre>
 	
 </section>

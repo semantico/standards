@@ -48,16 +48,16 @@
 	
 	<p>CSS Sprites basically take a number of image assets and merge them together into a singular image file. Each part of it is revealed using CSS background-position. Some typical CSS would look like:</p>
 	
-	<textarea class="brush:css">
-	a.expandbox { display:block; width: 75px; height: 15px; text-indent: -999px; overflow:hidden;
-				 background: url(../img/sprite.png) no-repeat -50px -5px;  }
-	</textarea>
+	<pre><code class="css">
+a.expandbox { display:block; width: 75px; height: 15px; text-indent: -999px; overflow:hidden;
+             background: url(../img/sprite.png) no-repeat -50px -5px;  }
+	</code></pre>
 	
 	<p>It's quite common to leverage sprites for <code.:hover</code> states. In that case you'll see something like:</p>
 	
-	<textarea class="brush:css">
-	a.expandbox:hover { background-position: -50px -20px; }
-	</textarea>
+	<pre><code class="css">
+a.expandbox:hover { background-position: -50px -20px; }
+	</code></pre>
 	
 	<p>Using CSS sprites reduces total page weight and reduces HTTP connections which speeds up page load. <a href="http://css-tricks.com/css-sprites/">More on the general technique and overview of sprites.</a> It is just an overall best practice to make use of CSS sprite images whenever you can.</p>
 	

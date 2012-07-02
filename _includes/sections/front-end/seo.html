@@ -28,14 +28,14 @@
 	<p>We must use semantic markup that's readable and logical when JavaScript and CSS are off. All page content must be in HTML; we don't want to use iframes or JavaScript for loading initial indexable content.</p>
 	
 	<figure class="preCode">All links should be to HTML destinations.</figure>
-	<textarea class="brush:html">
-		<a href="/shelf/jordan/page/2">
-	</textarea> 
+	<pre><code class="html">
+&lt;a href="/shelf/jordan/page/2">
+	</code></pre> 
 	
 	<figure class="preCode">Instead of</figure>
-	<textarea class="brush:html">
-		<a href="javascript:loadPage(2);">
-	</textarea>
+	<pre><code class="html">
+&lt;a href="javascript:loadPage(2);">
+	</code></pre>
 
 	<p>This lets the page get indexed correctly by search engines as well as allows users to open in new tabs and windows.</p>
 	
