@@ -219,9 +219,9 @@ X-UA-Compatible: IE=edge,chrome=1
        url('myfont-webfont.woff') format('woff'),        /* Modern Browsers */
        url('myfont-webfont.ttf') format('truetype'),        /* Safari, Android, iOS */
        url('myfont-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
-    font-weight: <font-weight>;
-    font-style: <font-style>;
-    // etc.
+    font-weight: normal;
+    font-style: italic;
+    /* etc */
 }
     </code></pre>
     <p>Here's a <a href="http://www.thecssninja.com/demo/css_fontface/">working demo</a> using this version of implementation.</p>
@@ -304,33 +304,6 @@ X-UA-Compatible: IE=edge,chrome=1
         <li>Using the Webfont Loader requires the use of JavaScript to work</li>
         <li>Most browsers will load the rest of the page first, leaving a blank space where the text would be, or otherwise show the fallback option if one exists, until the page fully loads.</li>
         <li>Some fonts in the webfont library render poorly on Windows</li>
-    </ul>
-    <hr />
-    <h3>Cufon</h3>
-    <p>If you choose to use Cufon, it is highly recommended you use the <a href="http://cufon.shoqolate.com/js/cufon-yui.js">Cufon compressed version</a>. You will need to convert your font using the <a href="http://cufon.shoqolate.com/generate/">generator</a>.</p>
-    <pre><code class="javascript">
-&lt;script src="cufon-yui.js" type="text/javascript">&lt;/script>
-&lt;script src="YourFont.font.js" type="text/javascript">&lt;/script>
-&lt;script type="text/javascript">
-    Cufon.replace('h1');        // Works without a selector engine
-    Cufon.replace('#sub1');     // Requires a selector engine for IE 6-7
-&lt;/script>
-    </code></pre>
-    <p>We recommend using Cufon sparingly since it can cause a lot of overhead if applied to a large amount of text. For more info visit the <a href="https://github.com/sorccu/cufon/wiki/">Cufon Wiki</a>.</p>
-    <strong>Pros</strong>
-    <ul>
-        <li>Wide browser support</li>
-        <li>Renders well in supported browsers</li>
-        <li>Customizable</li>
-        <li>Easy to implement</li>
-    </ul>
-    <strong>Cons</strong>
-    <ul>
-        <li>Requires use of JS to work</li>
-        <li>Text can't be selected that uses it</li>
-        <li>Not all characters can be used</li>
-        <li>Customization can be a pain</li>
-        <li>Not always easy to apply to multiple elements, especially when adding effects like hovers</li>
     </ul>
     <hr />
     <h3>Typekit</h3>
