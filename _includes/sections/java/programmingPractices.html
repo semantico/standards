@@ -9,7 +9,7 @@
         explicitly set or gotten-often that happens as a side effect of method calls.</p>
     <h2 id="classVariablesMethods">Referring to Class Variables and Methods</h2>
     <p>Avoid using an object to access a class (static) variable or method. Use a class name instead. For example:</p>
-    <figure class="preCode">Examples:</figure>
+    <figure class="pre-code">Examples:</figure>
     <pre><code class="java">
 classMethod();             //OK
 AClass.classMethod();      //OK
@@ -23,18 +23,18 @@ anObject.classMethod();    //AVOID!
     <p>Use a singularly defined <a href="#constants">constant</a>!</p>
     <h2 id="variableAssignments">Variable Assignments</h2>
     <p>Avoid using an object to access a class (static) variable or method. Use a class name instead. For example:</p>
-    <figure class="preCode">Avoid:</figure>
+    <figure class="pre-code">Avoid:</figure>
     <pre><code class="java">
 fooBar.fChar = barFoo.lchar = 'c'; // AVOID!
     </code></pre>
     <p>Do not use embedded assignments in an attempt to improve run-time performance. This is the job of the compiler.
         Example:</p>
-    <figure class="preCode">Avoid:</figure>
+    <figure class="pre-code">Avoid:</figure>
     <pre><code class="java">
 d = (a = b + c) + r;        // AVOID!
     </code></pre>
     <p>Should actually be written like:</p>
-    <figure class="preCode">Actual:</figure>
+    <figure class="pre-code">Actual:</figure>
     <pre><code class="java">
 a = b + c;
 d = a + r;
@@ -44,7 +44,7 @@ d = a + r;
         precedence problems.</p>
     <p>Even if the operator precedence seems clear to you, it might not be to others-you shouldn't assume that other
         programmers know precedence as well as you do.</p>
-    <figure class="preCode">Examples:</figure>
+    <figure class="pre-code">Examples:</figure>
     <pre><code class="java">
 if (a == b && c == d)     // AVOID!
 if ((a == b) && (c == d)) // RIGHT
@@ -52,7 +52,7 @@ if ((a == b) && (c == d)) // RIGHT
     <h2 id="expressionsConditional">Expressions before `?' in the Conditional Operator</h2>
     <p>If an expression containing a binary operator appears before the ? in the ternary ?: operator, it should be
         parenthesized.</p>
-    <figure class="preCode">Example:</figure>
+    <figure class="pre-code">Example:</figure>
     <pre><code class="java">
 (x >= 0) ? x : -x;
     </code></pre>

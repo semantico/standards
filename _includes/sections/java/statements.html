@@ -7,7 +7,7 @@
     </div>
     <h2 id="simpleStatements">Simple Statements</h2>
     <p>Each line should contain at most one statement:</p>
-    <figure class="preCode">Basic:</figure>
+    <figure class="pre-code">Basic:</figure>
     <pre><code class="java">
 argv++;         // Correct
 argc--;         // Correct
@@ -25,7 +25,7 @@ argv++; argc--; // AVOID!
     </ul>
     <h2 id="returnStatements">Return Statements</h2>
     <p>A return statement with a value should not use parentheses unless they make the return value more obvious in some way:</p>
-    <figure class="preCode">Return:</figure>
+    <figure class="pre-code">Return:</figure>
     <pre><code class="java">
 return myDisk.size();
 return (size ? size : defaultSize);
@@ -33,7 +33,7 @@ return (size ? size : defaultSize);
     <h2 id="ifStatements">If, if-else, if else-if else Statements</h2>
     <p>The if-else class of statements should have the form below.</p>
     <p>Note the space before the parentheses and the braces.</p>
-    <figure class="preCode">If/Else:</figure>
+    <figure class="pre-code">If/Else:</figure>
     <pre><code class="java">
 if (condition) {
     statements;
@@ -52,21 +52,21 @@ if (condition) {
 }
     </code></pre>
     <p>You <b>MUST</b> always use braces, do not do:</p>
-    <figure class="preCode">Bad:</figure>
+    <figure class="pre-code">Bad:</figure>
     <pre><code class="java">
 if (condition) //AVOID! THIS OMITS THE BRACES {}!
     statement;
     </code></pre>
     <h2 id="forStatements">For Statements</h2>
     <p>A standard "for" statement should have either this form:</p>
-    <figure class="preCode">For:</figure>
+    <figure class="pre-code">For:</figure>
     <pre><code class="java">
 for (initialization; condition; update) {
     statements;
 }
     </code></pre>
     <p>Or the new enhanced (Java 5) for-each form:</p>
-    <figure class="preCode">New(ish) for:</figure>
+    <figure class="pre-code">New(ish) for:</figure>
     <pre><code class="java">
 for (Object object : collection[Object]) {
     statements;
@@ -74,7 +74,7 @@ for (Object object : collection[Object]) {
     </code></pre>
     <p>An empty for statement (one in which all the work is done in the initialization, condition, and update clauses)
         should have the following form:</p>
-    <figure class="preCode">Empty for:</figure>
+    <figure class="pre-code">Empty for:</figure>
     <pre><code class="java">
 for (initialization; condition; update);
     </code></pre>
@@ -83,20 +83,20 @@ for (initialization; condition; update);
         (for the initialization clause) or at the end of the loop (for the update clause).</p>
     <h2 id="whileStatements">While Statements</h2>
     <p>A "while" statement should have the following form:</p>
-    <figure class="preCode">While:</figure>
+    <figure class="pre-code">While:</figure>
     <pre><code class="java">
 while (condition) {
     statements;
 }
     </code></pre>
     <p>An empty while statement should have the following form:</p>
-    <figure class="preCode">Empty While:</figure>
+    <figure class="pre-code">Empty While:</figure>
     <pre><code class="java">
 while (condition);
     </code></pre>
     <h2 id="doWhileStatements">Do-while Statements</h2>
     <p>A do-while statement should have the following form, note the while is on the same line as the ending brace:</p>
-    <figure class="preCode">Do-while:</figure>
+    <figure class="pre-code">Do-while:</figure>
     <pre><code class="java">
 do {
     statements;
@@ -104,7 +104,7 @@ do {
     </code></pre>
     <h2 id="switchStatements">Switch Statements</h2>
     <p>A switch statement should have the following form:</p>
-    <figure class="preCode">Switch:</figure>
+    <figure class="pre-code">Switch:</figure>
     <pre><code class="java">
 switch (condition) {
     case ABC:
@@ -128,7 +128,7 @@ switch (condition) {
     <h2 id="tryCatchStatements">Try-catch Statements</h2>
     <p>A try-catch statement should have the following format.</p>
     <p>Note the catch on the same line as the closing try brace.</p>
-    <figure class="preCode">Try-catch:</figure>
+    <figure class="pre-code">Try-catch:</figure>
     <pre><code class="java">
 try {
     statements;
@@ -138,7 +138,7 @@ try {
     </code></pre>
     <p>Note that a finally clause is optional, and if included should be on the same line as the catch close brace.</p>
     <p>The finally executes regardless of whether or not the try block has completed successfully.</p>
-    <figure class="preCode">Try-catch-finally:</figure>
+    <figure class="pre-code">Try-catch-finally:</figure>
     <pre><code class="java">
 try {
     statements;

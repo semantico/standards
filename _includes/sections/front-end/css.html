@@ -9,11 +9,11 @@
     <ul>
         <li>Add CSS through external files, minimizing the # of files, if possible. It should always be in the HEAD of the document.</li>
         <li>Use the LINK tag to include, <a href="http://blog.amodernfable.com/2008/01/21/thoughts-on-linking-to-stylesheets/">never the @import.</a>
-            <figure class="preCode">Including a stylesheet</figure>
+            <figure class="pre-code">Including a stylesheet</figure>
             <pre><code class="html">
 &lt;link rel="stylesheet" type="text/css" href="myStylesheet.css" />
             </code></pre>
-            <figure class="preCode">Don't use inline styling</figure>
+            <figure class="pre-code">Don't use inline styling</figure>
             <pre><code class="html">
 &lt;p style="font-size: 12px; color: #FFFFFF">This is poor form, I say&lt;/p>
             </code></pre>
@@ -101,14 +101,14 @@
     <p>Using <code>!important</code> overrides all specificity no matter how high it is. We like to avoid using it for this reason. Most of the time it is not necessary. Even if you need to override a selector in a stylesheet you don't have access to, there are usually ways to override it without using !important. Avoid using it if possible.</p>
     <h3>Pixels vs. Ems</h3>
     <p>We use the <code>px</code> unit of measurement to define <code>font size</code>, because it offers absolute control over text. We realize that using the <code>em</code> unit for font sizing used to be popular, to accommodate for Internet Explorer 6 not resizing pixel based text. However, all major browsers (including <abbr title="Internet Explorer 7">IE7</abbr> and <abbr title="Internet Explorer 8">IE8</abbr>) now support text resizing of pixel units and/or full-page zooming. Since <abbr title="Internet Explorer 6">IE6</abbr> is largely considered deprecated, pixels sizing is preferred. Additionally, unit-less <code>line-height</code> is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the <code>font-size</code>.</p>
-    <figure class="preCode">Correct</figure>
+    <figure class="pre-code">Correct</figure>
     <pre><code class="css">
 #selector {
     font-size: 13px;
     line-height: 1.5;  /*  13 * 1.5 = 19.5 ~ Rounds to 20px. */
 }
     </code></pre>
-    <figure class="preCode">Incorrect</figure>
+    <figure class="pre-code">Incorrect</figure>
     <pre><code class="css">
 /*  Equivalent to 13px font-size and 20px line-height, but only if the browser default text size is 16px. */
 #selector {
@@ -119,7 +119,7 @@
     <h3>Internet Explorer Bugs</h3>
     <p>We use a mixture of <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">conditional html tags</a> and <a href="http://mathiasbynens.be/notes/safe-css-hacks">safe CSS hacks</a> to tackle IE bugs.</p>
     <p>You can use the <code>.oldie</code> class to target IE8 and lower, and the same class with the <code>*</code> hack to target IE7 and lower.</p>
-    <figure class="preCode">Fixing IE</figure>
+    <figure class="pre-code">Fixing IE</figure>
     <pre><code class="html">
 &lt;!--[if lt IE 9]>&lt;html class="no-js oldie" lang="en">&lt;![endif]-->
 &lt;!--[if gt IE 9]>&lt;!-->&lt;html class="no-js" lang="en">&lt;!--&lt;![endif]-->

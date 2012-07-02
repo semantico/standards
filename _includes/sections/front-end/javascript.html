@@ -13,7 +13,7 @@
         <li>Don't rely on the user-agent string. Do proper feature detection. (More at <a href="http://diveintohtml5.info/detect.html">Dive Into HTML5: Detection</a> &amp; <a href="http://api.jquery.com/jQuery.support/">jQuery.support docs</a>)</li>
         <li>Don't use document.write().</li>
         <li>All Boolean variables should start with "is".
-            <figure class="preCode">Test for positive conditions</figure>
+            <figure class="pre-code">Test for positive conditions</figure>
             <pre><code class="js">
 isValid = (test.value >= 4 && test.success);
             </code></pre>
@@ -28,7 +28,7 @@ isValid = (test.value >= 4 && test.success);
         <li>Don't waste your time with <code>&lt;!-- --&gt;</code> comments surrounding your inline javascript, unless you care about Netscape 4.&nbsp;:)</li>
         <li>Organize your code as an <a href="http://kaijaeger.com/articles/the-singleton-design-pattern-in-javascript.html">Object Literal/Singleton</a>, in the <a href="http://www.yuiblog.com/blog/2007/06/12/module-pattern/">Module Pattern</a>, or as an <a href="http://mckoss.com/jscript/object.htm">Object with constructors</a></a>.</li>
       <li>Minimize global variables - the less globals you create, the better. Generally one, for your application namespace, is a good number. 
-            <figure class="preCode">When specifying any global variable, clearly identify it</figure>        
+            <figure class="pre-code">When specifying any global variable, clearly identify it</figure>        
             <pre><code class="js">
 window.globalVar = { ... }
             </code></pre>
@@ -37,20 +37,20 @@ window.globalVar = { ... }
     <h3>White-space</h3>
     <p>In general, the use of whitespace should follow longstanding English reading conventions. Such that, there will be one space after each comma and colon (and semi-colon where applicable), but no spaces immediately inside the right and left sides of parenthesis. In short, we advocate readability within reason. Additionally, braces should always appear on the same line as their preceding argument.</p>
     <p>Consider the following examples of a JavaScript for-loop...</p>
-    <figure class="preCode">Correct</figure>
+    <figure class="pre-code">Correct</figure>
     <pre><code class="js">
 for (var i = 0, j = arr.length; i &lt; j; i++) {
     // Do something.
 }
     </code></pre>
-    <figure class="preCode">Incorrect</figure>
+    <figure class="pre-code">Incorrect</figure>
     <pre><code class="js">
 for ( var i = 0, j = arr.length; i &lt; j; i++ )
 {
     // Do something.
 }
     </code></pre>
-    <figure class="preCode">Also incorrect</figure>
+    <figure class="pre-code">Also incorrect</figure>
     <pre><code class="js">
 for(var i=0,j=arr.length;i&lt;j;i++){
     // Do something.
