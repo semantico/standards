@@ -6,11 +6,13 @@
         <p>JavaScript has seen an explosion in popularity in recent years as powerful new browser implementations have finally empowered the creation of full on browser-based web applications. Additionally, careful use of JavaScript allows for full manipulation and control over the other two components of web page authoring, <a href="#markup">HTML Markup</a> and <a href="#css">CSS</a>. Today the structure of pages and the visual styles of pages can be manipulated real time without full web page refreshes.</p>
     </div>
     <h2>JavaScript Libraries</h2>
-        <p class="normalize">We primarily develop new applications in <a href="http://api.jquery.com/">jQuery</a>, though we have expertise in plain JavaScript as well as all major modern javascript libraries.</p>
+    <p class="normalize">We primarily develop new applications in <a href="http://api.jquery.com/">jQuery</a>, though we have expertise in plain JavaScript as well as many major modern javascript libraries.</p>
+    <p>If you find yourself doing a lot of data manipulation with objects and/or arrays <a href="http://underscorejs.org/">underscore</a> is a very useful utility library that fixes lots of javascript gotchas.</p>
     <h2>General Coding Principles</h2>
     <ul>
-        <li>99% of code should be housed in external javascript files. They should be included at the END of the BODY tag for maximum page performance.</li>
-        <li>Don't rely on the user-agent string. Do proper feature detection. (More at <a href="http://diveintohtml5.info/detect.html">Dive Into HTML5: Detection</a> &amp; <a href="http://api.jquery.com/jQuery.support/">jQuery.support docs</a>)</li>
+        <li>99% of code should be housed in external javascript files. They should be included at the END of the <code>body</code> tag for maximum page performance.</li>
+        <li>On larger projects javascript files should be asyncronously loaded with <a href="http://yepnopejs.com/">yepnope</a>.</li>
+        <li>Don't rely on the user-agent string. Do proper feature detection. (More at <a href="http://diveintohtml5.info/detect.html">Dive Into HTML5: Detection</a> &amp; <a href="http://modernizr.com/docs/">Modernizr docs</a>)</li>
         <li>Don't use document.write().</li>
         <li>All Boolean variables should start with "is".
             <figure class="pre-code">Test for positive conditions</figure>
@@ -20,7 +22,6 @@ isValid = (test.value >= 4 && test.success);
         </li>
         <li>Name variables and functions logically: For example: <code>popUpWindowForAd</code> rather than <code>myWindow</code>.</li>
         <li>Don't manually minify. With the exception of the traditional <code>i</code>, etc. for <code>for</code> loops, variables should be long enough to be meaningful.</li>
-        <li>Documentation should follow <a href="http://www.naturaldocs.org/documenting.html">NaturalDocs</a> structure.</li>
         <li>Constants or configuration variables (like animation durations, etc.) should be at the top of the file.</li>
         <li>Strive to create functions which can be generalized, take parameters, and return values. This allows for substantial code reuse and, when combined with includes or external scripts, can reduce the overhead when scripts need to change. For example, instead of hard coding a pop-window with window size, options, and url, consider creating a function which takes size, url, and options as variables.
         </li>
@@ -136,36 +137,36 @@ jQuery.fn.styledSelect = function(settings) {
 Author: Demo King */
 /*demo namespace*/
 demo = {
- common : {
-   init     : function(){
-       //initialize
+   common : {
+       init     : function(){
+           //initialize
+       },
+       finalize : function(){
+           //finalize
+       },
+       config : {
+           prop : "my value",
+           constant : "42"
+       }
    },
-   finalize : function(){
-       //finalize
-   },
-   config : {
-       prop : "my value",
-       constant : "42"
+   mapping : {
+       init     : function(){
+           //create a map
+       },
+       geolocate    : function(){
+           //geolocation is cool
+       },
+       geocode : function(){
+           //look up an address or landmark
+       },
+       drawPolylines : function(){
+           //draw some lines on a map
+       },
+       placeMarker : function(){
+           //place markers on the map
+       }
    }
- },
- mapping : {
-   init     : function(){
-       //create a map
-   },
-   geolocate    : function(){
-       //geolocation is cool
-   },
-   geocode : function(){
-       //look up an address or landmark
-   },
-   drawPolylines : function(){
-       //draw some lines on a map
-   },
-   placeMarker : function(){
-       //place markers on the map
-   }
- }
-}
+};
     </code></pre>
     <h2>Variables, ID &amp; Class</h2>
     <p>All JavaScript variables shall be written in either completely lowercase letter or camelCase. The one exception to this are Constructor functions, which are capitalized by tradition. All <code>id</code> and <code>class</code> declarations in CSS shall be written in only lowercase. Neither dashes nor underscores shall be used. </p>
