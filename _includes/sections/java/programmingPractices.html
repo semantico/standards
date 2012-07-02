@@ -1,91 +1,59 @@
 <!-- #### PROGRAMMING PRACTICES SECTION #### -->
-
 <section id="programmingPractices">
-
     <div class="intro has-icon">
         <h1>Programming Practices</h1>
-        
         <p>This section contains general good programming practices, that should be employed at Semantico.</p>
     </div>
-
     <h2 id="accessVariables">Providing Access to Instance and Class Variables</h2>
-    
     <p>Don't make any instance or class variable public without good reason. Often, instance variables don't need to be
         explicitly set or gotten-often that happens as a side effect of method calls.</p>
-
     <h2 id="classVariablesMethods">Referring to Class Variables and Methods</h2>
-
     <p>Avoid using an object to access a class (static) variable or method. Use a class name instead. For example:</p>
-
     <figure class="preCode">Examples:</figure>
     <pre><code class="java">
 classMethod();             //OK
-
 AClass.classMethod();      //OK
-
 anObject.classMethod();    //AVOID!
     </code></pre>
-
     <h2 id="numericalConstants">Numerical Constants</h2>
-
     <p>Numerical constants (literals) should <b>not</b> be coded directly, except for -1, 0, and 1, which can appear in a for loop as counter values.</p>
-
     <p>Use a singularly defined <a href="#constants">constant</a>!</p>
-
     <h2 id="nonNumericalConstants">String Constants</h2>
-
     <p>String constants (literals) should <b>not</b> be coded directly/hard-coded.</p>
-
     <p>Use a singularly defined <a href="#constants">constant</a>!</p>
-
     <h2 id="variableAssignments">Variable Assignments</h2>
-
     <p>Avoid using an object to access a class (static) variable or method. Use a class name instead. For example:</p>
-
     <figure class="preCode">Avoid:</figure>
     <pre><code class="java">
 fooBar.fChar = barFoo.lchar = 'c'; // AVOID!
     </code></pre>
-
     <p>Do not use embedded assignments in an attempt to improve run-time performance. This is the job of the compiler.
         Example:</p>
-
     <figure class="preCode">Avoid:</figure>
     <pre><code class="java">
 d = (a = b + c) + r;        // AVOID!
     </code></pre>
-
     <p>Should actually be written like:</p>
-
     <figure class="preCode">Actual:</figure>
     <pre><code class="java">
 a = b + c;
 d = a + r;
     </code></pre>
-
-
     <h2 id="parentheses">Parentheses</h2>
-
     <p>It is generally a good idea to use parentheses liberally in expressions involving mixed operators to avoid operator
         precedence problems.</p>
     <p>Even if the operator precedence seems clear to you, it might not be to others-you shouldn't assume that other
         programmers know precedence as well as you do.</p>
-
     <figure class="preCode">Examples:</figure>
     <pre><code class="java">
 if (a == b && c == d)     // AVOID!
 if ((a == b) && (c == d)) // RIGHT
     </code></pre>
-
-
     <h2 id="expressionsConditional">Expressions before `?' in the Conditional Operator</h2>
-
     <p>If an expression containing a binary operator appears before the ? in the ternary ?: operator, it should be
         parenthesized.</p>
-
     <figure class="preCode">Example:</figure>
     <pre><code class="java">
 (x >= 0) ? x : -x;
     </code></pre>
-
 </section>

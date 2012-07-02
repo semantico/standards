@@ -1,29 +1,20 @@
 <!-- #### STATEMENTS SECTION #### -->
-
 <section id="statements">
-
     <div class="intro has-icon">
         <h1>Statements</h1>
-        
         <p>This section includes info on all for/while/switch/try-catch/if/return statements.</p>
         <p>&nbsp;</p>
     </div>
-    
     <h2 id="simpleStatements">Simple Statements</h2>
-    
     <p>Each line should contain at most one statement:</p>
-
     <figure class="preCode">Basic:</figure>
     <pre><code class="java">
 argv++;         // Correct
 argc--;         // Correct
 argv++; argc--; // AVOID!
     </code></pre>
-
     <h2 id="compoundStatements">Compound Statements</h2>
-    
     <p>Compound statements are statements that contain lists of statements enclosed in braces "{ statements }":</p>
-
     <ul>
         <li>The enclosed statements should be indented one more level than the compound statement</li>
         <li>The opening brace should be at the end of the line that begins the compound statement;
@@ -32,37 +23,26 @@ argv++; argc--; // AVOID!
             such as an if-else or for statement. This makes it easier to add statements without accidentally introducing
             bugs due to forgetting to add braces.</li>
     </ul>
-
     <h2 id="returnStatements">Return Statements</h2>
-
     <p>A return statement with a value should not use parentheses unless they make the return value more obvious in some way:</p>
-
     <figure class="preCode">Return:</figure>
     <pre><code class="java">
-
-
 return myDisk.size();
-
 return (size ? size : defaultSize);
     </code></pre>
-
     <h2 id="ifStatements">If, if-else, if else-if else Statements</h2>
-
     <p>The if-else class of statements should have the form below.</p>
     <p>Note the space before the parentheses and the braces.</p>
-
     <figure class="preCode">If/Else:</figure>
     <pre><code class="java">
 if (condition) {
     statements;
 }
-
 if (condition) {
     statements;
 } else {
     statements;
 }
-
 if (condition) {
     statements;
 } else if (condition) {
@@ -71,82 +51,59 @@ if (condition) {
     statements;
 }
     </code></pre>
-
     <p>You <b>MUST</b> always use braces, do not do:</p>
-
     <figure class="preCode">Bad:</figure>
     <pre><code class="java">
 if (condition) //AVOID! THIS OMITS THE BRACES {}!
     statement;
     </code></pre>
-
-
     <h2 id="forStatements">For Statements</h2>
-
     <p>A standard "for" statement should have either this form:</p>
-
     <figure class="preCode">For:</figure>
     <pre><code class="java">
 for (initialization; condition; update) {
     statements;
 }
     </code></pre>
-
     <p>Or the new enhanced (Java 5) for-each form:</p>
-
     <figure class="preCode">New(ish) for:</figure>
     <pre><code class="java">
 for (Object object : collection[Object]) {
     statements;
 }
     </code></pre>
-
     <p>An empty for statement (one in which all the work is done in the initialization, condition, and update clauses)
         should have the following form:</p>
-
     <figure class="preCode">Empty for:</figure>
     <pre><code class="java">
 for (initialization; condition; update);
     </code></pre>
-
     <p>Note: When using the comma operator in the initialization or update clause of a for statement, avoid the
         complexity of using more than three variables. If needed, use separate statements before the for loop
         (for the initialization clause) or at the end of the loop (for the update clause).</p>
-
-
     <h2 id="whileStatements">While Statements</h2>
-
     <p>A "while" statement should have the following form:</p>
-
     <figure class="preCode">While:</figure>
     <pre><code class="java">
 while (condition) {
     statements;
 }
     </code></pre>
-
     <p>An empty while statement should have the following form:</p>
-
     <figure class="preCode">Empty While:</figure>
     <pre><code class="java">
 while (condition);
     </code></pre>
-
     <h2 id="doWhileStatements">Do-while Statements</h2>
-
     <p>A do-while statement should have the following form, note the while is on the same line as the ending brace:</p>
-
     <figure class="preCode">Do-while:</figure>
     <pre><code class="java">
 do {
     statements;
 } while (condition);
     </code></pre>
-
     <h2 id="switchStatements">Switch Statements</h2>
-
     <p>A switch statement should have the following form:</p>
-
     <figure class="preCode">Switch:</figure>
     <pre><code class="java">
 switch (condition) {
@@ -164,18 +121,13 @@ switch (condition) {
         break;
 }
     </code></pre>
-
     <p>Note the statement. Every time a case falls through (doesn't include a break statement), add a comment where the
         break statement would normally be. This is shown in the preceding code example with the /* falls through */ comment.</p>
-
     <p>Note the default case. Every switch statement should include a default case. The break in the default case is
         redundant, but it prevents a fall-through error if later another case is added.<p></p>
-
     <h2 id="tryCatchStatements">Try-catch Statements</h2>
-
     <p>A try-catch statement should have the following format.</p>
     <p>Note the catch on the same line as the closing try brace.</p>
-
     <figure class="preCode">Try-catch:</figure>
     <pre><code class="java">
 try {
@@ -184,10 +136,8 @@ try {
     statements;
 }
     </code></pre>
-
     <p>Note that a finally clause is optional, and if included should be on the same line as the catch close brace.</p>
     <p>The finally executes regardless of whether or not the try block has completed successfully.</p>
-
     <figure class="preCode">Try-catch-finally:</figure>
     <pre><code class="java">
 try {
