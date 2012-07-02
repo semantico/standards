@@ -18,10 +18,9 @@
 &lt;p style="font-size: 12px; color: #FFFFFF">This is poor form, I say&lt;/p>
             </code></pre>
             </li>
-        <li>Don't include styles inline in the document, either in a style tag or on the elements. It's harder to track down style rules.</li>    
+        <li>Don't include styles inline in the document, either in a style tag or on the elements. It's harder to track down style rules.</li>
         <li>Use <a href="http://necolas.github.com/normalize.css/">normalize.css</a> to make rendering more consistent across browsers.</li>
-        <li>Use a font-normalization file like <a href="http://developer.yahoo.com/yui/fonts/">YUI fonts.css</a></li>    
-        <li>Elements that occur only once inside a document should use IDs, otherwise, use classes.</li>
+        <li>Styles should be applied with classes, using elements and IDs in selectors should be avoided. This makes the CSS more reusable and cuts down on specificity.</li>
         <li>Understand <a href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">cascading and selector specificity</a> so you can write very terse and effective code.</li>
         <li>Write selectors that are optimized for speed. Where possible, avoid expensive CSS selectors. For example, avoid the * wildcard selector and don't qualify ID selectors (e.g. <code>div#myid</code>) or class selectors (e.g. <code>table.results</code>.)  This is especially important with web applications where speed is paramount and there can be thousands or even tens of thousands of DOM elements. More on <a href="https://developer.mozilla.org/en/Writing_Efficient_CSS">writing efficient CSS on the MDC</a>.</li>
     </ul>
@@ -34,37 +33,46 @@
     <h3>CSS Validation</h3>
     <p>We typically don't use the <a href="http://jigsaw.w3.org/css-validator/">W3C validator</a>.</p>
     <h3>CSS Formatting</h3>
-    <p>At minimum, format CSS with selectors on one line and each property on its own line. The declarations are indented. </p>
-    <p>As an enhancement to that style, related or child styles and additional 2 or 4 spaces. That allows for hierarchical scanning and organization and makes (for some people) an easier-to-read style sheet.</p>
-    <p>Also, if you specify multiple selectors, it's a good idea to start each on new line. This prevents lines from growing long and improves readability as well as version control workflow.</p>
+    <p>On all new projects we use hyphen delimited, lowercase selectors:</p>
     <pre><code class="css">
-.post-list li a{
-    color:#A8A8A8;
-}
-    .post-list li a:hover{
-        color:#000;
-        text-decoration:none;
-    }
-    .post-list li .author a, 
-    .post-list li .author a:hover{
-         color:#F30;
-         text-transform:uppercase;
-    }
+.thisIsBad {}
+.this_is_also_bad {}
+.this-is-correct {}
     </code></pre>
-    <p>For multiple author environments, single line CSS should be avoided because it can cause issues with version control. </p>
-    <h4>Alphabetize</h4>
-    <p>If you're performance obsessed <a href="http://www.barryvan.com.au/2009/08/css-minifier-and-alphabetiser/">alphabetizing CSS properties increases the odds of larger repeatable patterns being present to aid in GZIP compression</a>. </p> 
-<h3>Classes vs. IDs</h3>
-    <p>You should only give elements an ID attribute if they are unique. They should be applied to that element only and nothing else. Classes can be applied to multiple elements that share the same style properties. Things that should look and work in the same way can have the same class name.</p>
+    <p>Single line CSS should be avoided because it can cause issues with version control. </p>
+    <pre><code class="css">
+/* incorrect */
+.masthead { position: relative; max-width: 990px; margin: auto; }
+
+/* correct */
+.masthead {
+    position: relative;
+    max-width: 990px;
+    margin: auto;
+}
+    </code></pre>
+    <h3>Classes vs. IDs</h3>
+    <p><a href="http://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class/">Do not use IDs in CSS <strong>at all</strong></a>.
+        They can be used in your markup for JavaScript and fragment-identifiers but use only classes for styling. Classes come with the benefit
+        of being reusable and they have a nice, low specificity.</p>
+    <p>Chaining classes is <em>encouraged</em>, allowing for more modularity and reusability of components.</p>
     <pre><code class="html">
-&lt;ul id="categories">
-    &lt;li class="item">Category 1</li>
-    &lt;li class="item">Category 2</li>
-    &lt;li class="item">Category 3</li>
+&lt;ul class="inline-list breadcrumb">
+    &lt;li class="breadcrumb-item">Tier 1&lt;/li>
+    &lt;li class="breadcrumb-item">Tier 2&lt;/li>
+    &lt;li class="breadcrumb-item">Tier 3&lt;/li>
 &lt;/ul>
     </code></pre>
     <h3>Naming Conventions for Selectors</h3>
-    <p>It is always preferable to name something, be it an ID or a class, by the nature of <strong>what it is</strong> rather than by <strong>what it looks like</strong>. For instance, a class name of <code>bigBlueText</code> for a special note on a page is quite meaningless if it has been changed to have a small red text color. Using a more intelligent convention such as <code>noteText</code> is better because when the  visual style changes it still makes sense.</p>
+    <p>It is always preferable to name something, be it an ID or a class, by the nature of <strong>what it is</strong> rather than by <strong>what it looks like</strong>. For instance, a class name of <code>big-blue-text</code> for a special note on a page is quite meaningless if it has been changed to have a small red text color. Using a more intelligent convention such as <code>note-text</code> is better because when the  visual style changes it still makes sense.</p>
+    <h3>OOCSS</h3>
+    <p>Instead of building dozens of unique components, try and spot repeated design patterns abstract them; build these skeletons as base ‘objects’ and then peg classes onto these to extend their styling for more unique circumstances.</p>
+    <p>If you have to build a new component split it into structure and skin; build the structure of the component using very generic classes so that we can reuse that construct and then use more specific classes to skin it up and add design styles.</p>
+    <p><b>More information:</b></p>
+    <ul>
+        <li><a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/">The media object saves hundreds of lines of code</a></li>
+        <li><a href="http://csswizardry.com/2011/09/the-nav-abstraction/">The ‘nav’ abstraction</a></li>
+    </ul>
     <h3>Selectors</h3>
     <p>The <a href="http://www.w3.org/TR/2009/PR-css3-selectors-20091215/">CSS Selectors Level 3</a> specification introduces a whole new set of <a href="http://www.w3.org/TR/css3-selectors/#selectors">CSS Selectors</a> that are extremely useful for better selection of elements.</p>
     <h4>Pseudo-classes</h4>
@@ -109,27 +117,30 @@
 }
     </code></pre>
     <h3>Internet Explorer Bugs</h3>
-    <p>Inevitably, when all other browsers appear to be working correctly, any and all versions of Internet Explorer will introduce a few nonsensical bugs, delaying time to deployment. While we encourage troubleshooting and building code that will work in all browsers without special modifications, sometimes it is necessary to use conditional <code>if IE</code> comments for CSS hooks we can use in our stylesheets. <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Read more on paulirish.com</a></p>
+    <p>We use a mixture of <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">conditional html tags</a> and <a href="http://mathiasbynens.be/notes/safe-css-hacks">safe CSS hacks</a> to tackle IE bugs.</p>
+    <p>You can use the <code>.oldie</code> class to target IE8 and lower, and the same class with the <code>*</code> hack to target IE7 and lower.</p>
     <figure class="preCode">Fixing IE</figure>
     <pre><code class="html">
-&lt;!--[if lt IE 7 ]> &lt;body class="ie6"> &lt;![endif]-->
-&lt;!--[if IE 7 ]>    &lt;body class="ie7"> &lt;![endif]-->
-&lt;!--[if IE 8 ]>    &lt;body class="ie8"> &lt;![endif]-->
-&lt;!--[if IE 9 ]>    &lt;body class="ie9"> &lt;![endif]-->
-&lt;!--[if !IE]>&lt;!--> &lt;body> &lt;!--&lt;![endif]-->
-    </code></pre>
-    <pre><code class="css">
-        .box { float: left; margin-left: 20px; }
-        .ie6 .box { margin-left: 10px; }
-    </code></pre>
-    <p>If you're using HTML5 (and the <a href="#h5bp">HTML5 Boilerplate</a>) we encourage the use of the <a href="http://www.modernizr.com/">Modernizer</a> JavaScript library and this pattern:</p>
-    <pre><code class="html">
-&lt;!--[if lt IE 7]> &lt;html class="no-js ie ie6" lang="en"> &lt;![endif]-->
-&lt;!--[if IE 7]>    &lt;html class="no-js ie ie7" lang="en"> &lt;![endif]-->
-&lt;!--[if IE 8]>    &lt;html class="no-js ie8" lang="en"> &lt;![endif]-->
-&lt;!--[if IE 9]>    &lt;html class="no-js ie9" lang="en"> &lt;![endif]-->
+&lt;!--[if lt IE 9]>&lt;html class="no-js oldie" lang="en">&lt;![endif]-->
 &lt;!--[if gt IE 9]>&lt;!-->&lt;html class="no-js" lang="en">&lt;!--&lt;![endif]-->
     </code></pre>
+    <pre><code class="css">
+.box {
+    float: left;
+    margin-left: 20px;
+}
+.oldie .box {
+    margin-left: 10px; /* targets IE8 and lower */
+    *margin-left: 5px; /* targets IE7 and lower */
+}
+    </code></pre>
+    <p>If you're using HTML5 (and the <a href="#h5bp">HTML5 Boilerplate</a>) we encourage the use of the <a href="http://www.modernizr.com/">Modernizer</a> JavaScript library and appending the no-js class to the <coe>html</code> element.</p>
+    <h4>Prevent Compatibility Mode</h4>
+    <p>Sometimes <abbr title="Internet Explorer">IE</abbr> can have a mind of its own and will switch to compatibility mode without you knowing. Include the following in HTTP headers sent on responses containing html:</p>
+    <pre><code class="http">
+X-UA-Compatible: IE=edge,chrome=1
+    </pre></code>
+    <p>If using the H5BP please note that it includes this definition in the <code>&lt;head></code> section of the html, and will need to be removed as it will cause the <a href="https://github.com/h5bp/html5-boilerplate/issues/378">compatapility mode icon to appear</a> in IE when used with the<D-r> conditional html tags.</p>
 <h3>Shorthand</h3>
     <p>In general, CSS shorthand is preferred because of its terseness, and the ability to later go back and add in values that are already present, such as the case with margin and padding. Developers should be aware of the <abbr title="Top Right Bottom Left">TRBL</abbr> acronym, denoting the order in which the sides of an element are defined, in a clock-wise manner: Top, Right, Bottom, Left. If <em>bottom</em> is undefined, it inherits its value from <em>top</em>. Likewise, if <em>left</em> is undefined, it inherits its value from <em>right</em>. If only the <em>top</em> value is defined, all sides inherit from that one declaration.</p>
     <p class="normalize">For more on reducing stylesheet code redundancy, and using CSS shorthand in general:</p>
@@ -216,11 +227,6 @@
     <p>Here's a <a href="http://www.thecssninja.com/demo/css_fontface/">working demo</a> using this version of implementation.</p>
     <h4>Cross-Browser Compatibility</h4>
     <p>Safari, <abbr title="Internet Explorer version 6-9">IE 6-9</abbr>, <abbr title="Internet Explorer Compatibility Modes">IE 9 Compatibility Modes</abbr>, Firefox, Chrome, iOS, Android, Opera</p>
-    <h4>Prevent Compatibility Mode</h4>
-    <p>Sometimes <abbr title="Internet Explorer">IE</abbr> can have a mind of its own and will switch to compatibility mode without you knowing. Include the following in the site <code>&lt;head&gt;</code> to prevent your site from defaulting to compatibility mode:</p>
-    <pre><code class="html">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    </code></pre>
     <hr />
     <h4>Tips for @font-face</h4>
     <ul>
