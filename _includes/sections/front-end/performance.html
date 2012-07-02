@@ -42,7 +42,9 @@
     </code></pre>
     <p>It's quite common to leverage sprites for <code.:hover</code> states. In that case you'll see something like:</p>
     <pre><code class="css">
-a.expandbox:hover { background-position: -50px -20px; }
+.expandbox:hover {
+    background-position: -50px -20px;
+}
     </code></pre>
     <p>Using CSS sprites reduces total page weight and reduces HTTP connections which speeds up page load. <a href="http://css-tricks.com/css-sprites/">More on the general technique and overview of sprites.</a> It is just an overall best practice to make use of CSS sprite images whenever you can.</p>
     <p>Many developers use a vertically-oriented sprite in addition to the primary sprite. This vertical sprite will be <strong>less than or equal to 100px wide</strong> (and tall) and contain icons that are typically placed next to text, such as list item bullets or call to action links and buttons. Yahoo uses a few <a href="http://l.yimg.com/a/i/ww/sp/pa-icons3.gif">such as this one</a>.</p>
