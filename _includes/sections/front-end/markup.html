@@ -26,7 +26,7 @@
     </code></pre>
     <p>In HTML5, just do:</p>
     <pre><code class="html">
-&lt;meta charset="utf-8">
+&lt;meta charset="utf-8" />
     </code></pre>
     <!--<h3>Use of new semantic elements</h3>
     <p>Elements such as <code>header, footer, section, article</code>, and others, can be used multiple times on a page, and more than once within one or the other even. In cases where there will be more than one of the same element, that is used for the same thing such as using <code>article</code> for each blog post of a page and each article having a <code>header</code> and <code>footer</code>, adding a class to them can help separate them from any other places you may use these elements on the page. That way you can target the elements more specifically in your CSS. However this is not always necessary, depending on the structure of the page and the way you define your selectors.</p>
@@ -86,7 +86,16 @@
             </code></pre>
         </li>
         <li>Always use title-case for headers and titles. Do not use all caps or all lowercase titles in markup, instead apply the CSS property <code>text-transform:uppercase/lowercase</code>.</li>
-    </ul>    
+    </ul>
+    <h3>Self closing tags</h3>
+    <p>As a company Semantico does a great deal of work with XML, XSLT and XPath. Although optional in HTML5, all tags should be closed in HTML making it valid XML.</p>
+    <pre><code class="html">
+&lt;!-- correct: -->
+&lt;img src="/path/to/photo.jpg" alt="A funny cat" /> 
+
+&lt;!-- incorrect: -->
+&lt;input type="email" name="register-email" id="register-email" class="input-medium">
+    </pre></code>
     <h3>Quoting Attributes</h3>
     <p>The HTML5 specification defines quotes around attributes as optional. For consistency with attributes that accept whitespace, all attributes should be quoted. </p> 
     <pre><code class="html">
