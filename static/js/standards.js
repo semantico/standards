@@ -13,6 +13,10 @@ semantico.load = semantico.load || function () {
         return window.jQuery ? $(e).scrollTop().top : e.pageYOffset;
     };
 
+    $('h1,h2,h3,h4').each(function() {
+        this.id = '_' + toSelectorStr($(this).text());
+    });
+
     titles  = $('.intro h1:nth-child(1)');
     toc     = "";
     tocList = $('#toc');
@@ -23,16 +27,14 @@ semantico.load = semantico.load || function () {
         var $this, text, id, h2s, subs;
         $this = $(el);
         text  = $this.text();
-        id    = '_' + toSelectorStr(text);
-        el.id = id;
+        id    = el.id;
         h2s   = $('h2', $this.closest('section'));
-        subs  = "";
+        subs  = '';
         h2s.each(function (i, el) {
             var $this, text, id;
             $this = $(el);
             text  = $this.text();
-            id    = '_' + toSelectorStr(text);
-            el.id = id;
+            id    = el.id;
             subs  += '<li><a class="toc-tier-2" href="#' + id + '">' + text + '</a></li>';
         });
         if (h2s.length !== 0) subs = '<ul class="toc-sub">' + subs + '</ul>';
