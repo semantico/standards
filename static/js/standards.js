@@ -71,7 +71,7 @@ semantico.load = semantico.load || function () {
 
     yepnope({
         test:     code.length > 0,
-        yep:      '/static/js/highlight.pack.js',
+        yep:      '/standards/static/js/highlight.pack.js',
         callback: function () {
             code.each(function (i, el) {
                 hljs.highlightBlock(el);
