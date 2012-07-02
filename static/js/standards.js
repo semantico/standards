@@ -21,6 +21,18 @@ semantico.load = semantico.load || function () {
     toc     = "";
     tocList = $('#toc');
 
+    code = $('pre>code');
+
+    yepnope({
+        test:     code.length > 0,
+        yep:      '/standards/static/js/highlight.pack.js',
+        callback: function () {
+            code.each(function (i, el) {
+                hljs.highlightBlock(el);
+            });
+        }
+    });
+
     if (tocList.length === 0) return;
 
     titles.each(function (i, el) {
@@ -54,30 +66,6 @@ semantico.load = semantico.load || function () {
 
     posToc();
     $(window).on('scroll', posToc);
-
-    tocItems = $('a', tocList);
-    $(window).on('scroll.scrollto', function (e) {
-        var t, l, i;
-        t = getTop(window);
-        l = tocItems.length;
-
-        for (i = 0; i < l; i++) {
-            
-        }
-
-    });
-
-    code = $('pre>code');
-
-    yepnope({
-        test:     code.length > 0,
-        yep:      '/standards/static/js/highlight.pack.js',
-        callback: function () {
-            code.each(function (i, el) {
-                hljs.highlightBlock(el);
-            });
-        }
-    });
 
 };
 
