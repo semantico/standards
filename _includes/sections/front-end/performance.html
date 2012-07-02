@@ -12,10 +12,10 @@
         <li>Set caching headers appropriately.</li>
         <li>Consider a cookie-less subdomain for static assets</li>
         <li>CSS should be located in the <code>&lt;head></code> of the document, Javascript should be right before the <code>&lt;/body></code> tag.</li>
-        <li>Both CSS and JavaScript should be served minified. Most people use the <a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor</a> for this.</li>
         <li>Both should be <a href="http://code.google.com/speed/page-speed/docs/payload.html#GzipCompression">served using gzip on the wire</a></li>
         <li>CSS should be concatenated together. Obviously this can only be done for files that share the same media type (e.g. screen or print). The general goal here is to reduce the number of HTTP connections to dependencies during the loading of the page.</li>
         <li>JavaScript should be concatenated. While a ajax script dependency manager would be ideal (similar to the YUI 3 Loader), it's rather complicated to implement. In its place I'd recommend a singular download of most of the script used on the site. (Of course, proper caching should be used to retain the file as long as is reasonable).</li>
+        <li>Both CSS and JavaScript should be served minified. Most people use the <a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor</a> for this.</li>
         <li>Concatenation and minification typically occur during an automated build process, when packaging the code for deployment on stage or production. Many use tools like <a href="http://ant.apache.org/">Ant</a> or <a href="http://maven.apache.org/">Maven</a> for this.</li>
         <li>Avoid inline <code>&lt;script></code> blocks within the HTML. They block rendering and are quite devastating to page load time.</li>
     </ul>
@@ -31,8 +31,14 @@
     <h3>Leverage CSS Sprites</h3>
     <p>CSS Sprites basically take a number of image assets and merge them together into a singular image file. Each part of it is revealed using CSS background-position. Some typical CSS would look like:</p>
     <pre><code class="css">
-a.expandbox { display:block; width: 75px; height: 15px; text-indent: -999px; overflow:hidden;
-             background: url(../img/sprite.png) no-repeat -50px -5px;  }
+.expandbox {
+    display: block;
+    width: 75px;
+    height: 15px;
+    text-indent: -999px;
+    overflow:hidden;
+    background: url(../img/sprite.png) no-repeat -50px -5px;
+}
     </code></pre>
     <p>It's quite common to leverage sprites for <code.:hover</code> states. In that case you'll see something like:</p>
     <pre><code class="css">
@@ -48,8 +54,7 @@ a.expandbox:hover { background-position: -50px -20px; }
         <dd>This will cover all photography-based images, such as homepage and category page promo images, or anything with a very high color count.</dd>
         <dt>PNG24</dt> 
         <dd>
-            <p>This format is easily accessible in Photoshop outputs high-color count imagery and fully supports graded opacity by pixel. Relatively, it's quite a heavy format as far as weight in kilobytes. It is the only format that IE6 needs to execute a pngfix on. When projects require support of IE6, we use the <a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/">DD_belatedPNG script</a> (A pngfix fixes the issue where PNG24's appear to have a gray or light-blue background in IE6. They are not always compatible with background-position).</p>
-            <p>In many cases you can use a GIF fallback for IE6 in place of a PNG24. This is especially true if any sprites need to be done in PNG24. All pngfixes are very slow and expensive, so it's best to avoid using them.</p>
+            <p>This format is easily accessible in Photoshop outputs high-color count imagery and fully supports graded opacity by pixel. Relatively, it's quite a heavy format as far as weight in kilobytes. It is the only format that IE6 needs to execute a pngfix on.</p>
         </dd>
         <dt>PNG8</dt>
         <dd>
