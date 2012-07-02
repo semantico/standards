@@ -625,6 +625,12 @@ pre {
     border: 1px solid #d0d0d0;
 }
 
+hr {
+    height:     1px;
+    border:     0;
+    background: #fff;
+}
+
 
 /* == MODULES == */
 .top-bar {
