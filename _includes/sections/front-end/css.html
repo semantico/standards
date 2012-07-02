@@ -230,6 +230,7 @@ X-UA-Compatible: IE=edge,chrome=1
     <hr />
     <h4>Tips for @font-face</h4>
     <ul>
+        <li>Use <a href="http://www.fontsquirrel.com/fontface/generator/">Font Squirrel's online <code>@font-face</code> generator</a> and inline the <code>@font-face</code> definitions in your own CSS.</li>
         <li>IE 6–8 will only accept a TrueType font packaged as an EOT.</li>
         <li>font-weight and font-style have different meanings within <code>@font-face</code>. 
             Declarations where <code>font-weight:bold;</code> means this is the bold version of this typeface, rather than apply bold to this text</li>
@@ -265,8 +266,8 @@ X-UA-Compatible: IE=edge,chrome=1
     </code></pre>
     <h3>Webfont Loader</h3>
     <p>Another option Google offers is the <a href="https://code.google.com/apis/webfonts/docs/webfont_loader.html">Webfont Loader</a> which is a JavaScript library that allows for more control than the font API does. You can also use multiple webfont providers like Typekit. To use it include the script in your page:</p>
-    <pre><code class="javascript">
-&lt;script type="text/javascript">
+    <pre><code class="html">
+&lt;script>
     WebFontConfig = { google: { families: [ 'Tangerine', 'Cantarell' ]} };
     (function() {
         var wf = document.createElement('script');
@@ -280,9 +281,9 @@ X-UA-Compatible: IE=edge,chrome=1
 &lt;/script>
     </code></pre>
     <p class="normalize">Including the webfont.js file this way is faster if not already using the Ajax APIs. Otherwise you should use this:</p>
-    <pre><code class="javascript">
-&lt;script type="text/javascript" src="https://www.google.com/jsapi">&lt;/script>
-&lt;script type="text/javascript">
+    <pre><code class="html">
+&lt;script src="https://www.google.com/jsapi">&lt;/script>
+&lt;script>
     google.load("webfont", "1");
     google.setOnLoadCallback(function() {
         WebFont.load({ google: { families: [ 'Tangerine', 'Cantarell' ]} });
@@ -322,25 +323,6 @@ X-UA-Compatible: IE=edge,chrome=1
         <li>Limited font library access without paying</li>
         <li>Free and cheapest plans only allow use on 1-2 web sites and 2-5 fonts per site</li>
         <li>You have to pay to use it on more than 1 site</li>
-    </ul>
-    <hr />
-    <h3>Scalable Inman Flash Replacement (sIFR)</h3>
-    <p>We do not recommend that you use this method but because of how widely used it is we felt it was necessary to include so you could make a properly informed decision when choosing which method to go with for customized webfonts.</p>
-    <p>Despite its wide popularity among web designers, and its decent support in most browsers, the drawbacks to its use outweigh its convenience. The biggest and most obvious reason to not use sIFR is the fact that it uses Flash. Plus, in order for the Flash to even work, it requires JavaScript and the scripts must be loaded before the text you use it on is visible on the page. Not to mention that it increases page load time, and can cause a slow site to be even slower.</p>
-    <p class="normalize">We'll let you do the math here.</p>
-    <strong>Pros</strong>
-    <ul>
-        <li>Text can be selected</li>
-        <li>Support on most browsers</li>
-        <li>Renders okay on supported browsers</li>
-    </ul>
-    <strong>Cons</strong>
-    <ul>
-        <li>It uses Flash</li>
-        <li>Requires JavaScript for the Flash to work</li>
-        <li>It's Flash!</li>
-        <li>Text doesn't appear until the scripts load</li>
-        <li>...and it's Flash...</li>
     </ul>
     <hr />
     <h3>Font Licensing</h3>
