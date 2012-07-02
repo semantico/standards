@@ -829,3 +829,14 @@ li.social-li {
     content: "\2193";
     color:   #EF6B00;
 }
+
+.pre-code {
+    margin-top: 18px;
+    padding: 4px 9px 5px;
+    border: 1px solid #d0d0d0;
+    border-width: 1px 1px 0;
+}
+
+.pre-code + pre {
+    margin-top: 0;
+}
