@@ -71,7 +71,7 @@
     <script>
         (function () {
 
-            window._gaq = [['_setAccount', 'UA-XXX'], 
+            window._gaq = [['_setAccount', 'UA-7877119-7'], 
                 ['_trackPageview'], ['_trackPageLoadTime'], ['_setSiteSpeedSampleRate', 10]];
             var zep     = navigator.userAgent.indexOf("MSIE") == -1;
 
@@ -85,10 +85,6 @@
                 },
                 {
                     load:     '{{ site.host }}/standards/static/js/standards.js'
-                },
-                {
-                    test:     Modernizr.history,
-                    yep:      '{{ site.host }}/standards/static/js/pages.js'
                 }]);
             // GA is loaded at the same time as the other scripts because it has no dependencies
             yepnope(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
