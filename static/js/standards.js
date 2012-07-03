@@ -6,7 +6,7 @@ semantico.load = semantico.load || function () {
 
     toSelectorStr = function (str) {
         str = '' + str;
-        return ( window.jQuery ? $.trim(str) : str.trim() ).toLowerCase().replace(/\s+/g, '-');
+        return ( window.jQuery ? $.trim(str) : str.trim() ).toLowerCase().replace(/[\s|:]+/g, '-');
     };
 
     getTop = function (e) {
