@@ -21,8 +21,9 @@
         <li>Don't include styles inline in the document, either in a style tag or on the elements. It's harder to track down style rules.</li>
         <li>Use <a href="http://necolas.github.com/normalize.css/">normalize.css</a> to make rendering more consistent across browsers.</li>
         <li>Styles should be applied with classes, using elements and IDs in selectors should be avoided. This makes the CSS more reusable and cuts down on specificity.</li>
-        <li>Understand <a href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">cascading and selector specificity</a> so you can write very terse and effective code.</li>
-        <li>Write selectors that are optimized for speed. Where possible, avoid expensive CSS selectors. For example, avoid the * wildcard selector and don't qualify ID selectors (e.g. <code>div#myid</code>) or class selectors (e.g. <code>table.results</code>.)  This is especially important with web applications where speed is paramount and there can be thousands or even tens of thousands of DOM elements. More on <a href="https://developer.mozilla.org/en/Writing_Efficient_CSS">writing efficient CSS on the MDC</a>.</li>
+        <li>Understand <a href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">cascading and selector specificity</a>, but avoid relying on it.</li>
+        <li>Keep selectors efficient and portable</li>
+        <li><a href="https://github.com/csswizardry/CSS-Guidelines/blob/master/CSS%20Guidelines.md#selectors">Avoid heavily location-based selectors</a></li>
     </ul>
     <h3>CSS Box Model</h3>
     <p>Intimate knowledge and understanding of the CSS and browser-based box model is necessary for conquering the fundamentals of CSS layouts.</p>
