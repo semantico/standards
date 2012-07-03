@@ -1,4 +1,4 @@
-# Semantico Code Standards &amp; Guidelines
+# [Semantico](http://www.semantico.com) Code Standards &amp; Guidelines
 
 http://semantico.github.com/standards/
 
