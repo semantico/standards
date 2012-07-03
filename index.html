@@ -2,3 +2,45 @@
 layout:  default
 sidebar: false
 ---
+<div class="row">
+    <div class="cell1">
+        <h1>About these guides</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue fringilla fringilla. Aliquam ornare ipsum eu odio laoreet placerat. Praesent ut mi urna. Maecenas dictum rutrum viverra. </p>
+        <p>Inspired by and heavily drawn upon:</p>
+        <ul>
+            <li><a href="http://na.isobar.com/standards/">Isobar, Front-end Code Standards &amp; Best Practices</a></li>
+            <li><a href="https://github.com/csswizardry/CSS-Guidelines/blob/master/CSS%20Guidelines.md">General CSS notes, advice and guidelines</a></li>
+        </ul>
+        <h2>Authors</h2>
+    </div> <!-- /.cell1 -->
+    <div class="cell2">
+        <h3>I'm looking for</h3>
+        <div class="btn-group">
+            <a href="/standards/java/" class="btn">
+                <h3 class="btn-language">Java</h3>
+                <span class="">Code Standards & Guidelines</span>
+            </a>
+            <a href="/standards/java/" class="btn">
+                <h3 class="btn-language">Front-end</h3>
+                <span class="">Code Standards & Guidelines</span>
+            </a>
+        </div> <!-- /.btn-group -->
+    </div> <!-- /.cell2 -->
+    <div class="cell2">
+        <h2><a href="https://github.com/semantico/standards">Fork me github</a></h2>
+
+        <h3>Getting the project running locally</h3>
+        <ol>
+            <li>Checkout the code from github</li>
+            <li><a href="http://ruby.about.com/od/tutorials/a/installruby.htm">Install ruby</a></li>
+            <li>Install the jekyll gem: <code>gem install jekyll</code></li>
+            <li>Navigate to your standards folder and use <code>jekyll</code></li>
+            <li>Visit <a href="//localhost:4000/standards/">http://localhost:4000/standards/</a></li>
+        </ol>
+        <h3>Helpers</h3>
+        <p>There is a helper script that will checkout the <code>gh-pages</code> rebase your changes from the master branch and then re-checkout the master branch:</p>
+        <pre><code>
+$ ./bin/rebase.sh
+        </code></pre>
+    </div> <!-- /.cell2 -->
+</div> <!-- /.row -->

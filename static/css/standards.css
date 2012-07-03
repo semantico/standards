@@ -866,3 +866,198 @@ li.social-li {
     z-index:  1;
 }
 
+code {
+    background:            rgba(239, 107, 0, .075);
+    padding:               2px;
+    -webkit-border-radius: 2px;
+            border-radius: 2px;
+}
+
+/*** hompage ***/
+
+.row {
+    overflow: hidden;
+    margin: 0 0 0 -1.515151515152%;
+}
+.cell1, .cell2 {
+    float:                 left;
+    width:                 30.80808080808%;
+    margin:                0 0 18px 1.515151515152%;
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    background:            #fff;
+    background:            rgba(255, 255, 255, .35);
+    padding:               18px 1.515151515152%;
+}
+.cell2 {
+    width: 60%;
+}
+.btn {
+    width:                 48.7551867219915%;
+    float:                 left;
+    margin-left:           2.489626556017%;
+    text-align:            center;
+    -webkit-box-sizing:    border-box; /* Safari/Chrome, other WebKit */
+       -moz-box-sizing:    border-box;    /* Firefox, other Gecko */
+            box-sizing:    border-box;         /* Opera/IE 8+ */
+    background:            #fff;
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    -webkit-box-shadow:    0 2px 4px rgba(0, 0, 0, .1);
+            box-shadow:    0 2px 4px rgba(0, 0, 0, .1);
+    padding:               18px 0;
+    border:                0;
+}
+.btn:active {
+    position:           relative;
+    top:                2px;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+            box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+}
+.btn:first-child {
+    margin: 0;
+}
+.btn-language {
+    margin:    0;
+    font-size: 18px;
+}
+
+
+
+
+/*** highlightjs styles: ***/
+
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+pre code {
+  display: block; padding: 0.5em;
+  color: #000;
+  background: #f8f8ff
+}
+
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .javadoc {
+  color: #998;
+  font-style: italic
+}
+
+pre .keyword,
+pre .css .rule .keyword,
+pre .winutils,
+pre .javascript .title,
+pre .lisp .title,
+pre .nginx .title,
+pre .subst,
+pre .request,
+pre .status {
+  color: #000;
+  font-weight: bold
+}
+
+pre .number,
+pre .hexcolor {
+  color: #40a070
+}
+
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula {
+  color: #d14
+}
+
+pre .title,
+pre .id {
+  color: #900;
+  font-weight: bold
+}
+
+pre .javascript .title,
+pre .lisp .title,
+pre .subst {
+  font-weight: normal
+}
+
+pre .class .title,
+pre .haskell .type,
+pre .vhdl .literal,
+pre .tex .command {
+  color: #458;
+  font-weight: bold
+}
+
+pre .tag,
+pre .tag .title,
+pre .rules .property,
+pre .django .tag .keyword {
+  color: #000080;
+  font-weight: normal
+}
+
+pre .attribute,
+pre .variable,
+pre .instancevar,
+pre .lisp .body {
+  color: #008080
+}
+
+pre .regexp {
+  color: #009926
+}
+
+pre .class {
+  color: #458;
+  font-weight: bold
+}
+
+pre .symbol,
+pre .ruby .symbol .string,
+pre .ruby .symbol .keyword,
+pre .ruby .symbol .keymethods,
+pre .lisp .keyword,
+pre .tex .special,
+pre .input_number {
+  color: #990073
+}
+
+pre .builtin,
+pre .built_in,
+pre .lisp .title {
+  color: #0086b3
+}
+
+pre .preprocessor,
+pre .pi,
+pre .doctype,
+pre .shebang,
+pre .cdata {
+  color: #999;
+  font-weight: bold
+}
+
+pre .deletion {
+  background: #fdd
+}
+
+pre .addition {
+  background: #dfd
+}
+
+pre .diff .change {
+  background: #0086b3
+}
+
+pre .chunk {
+  color: #aaa
+}
+
+pre .tex .formula {
+  opacity: 0.5;
+}
+
