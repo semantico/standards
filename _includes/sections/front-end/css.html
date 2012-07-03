@@ -258,13 +258,13 @@ X-UA-Compatible: IE=edge,chrome=1
     <h4>Webfonts API</h4>
     <p><a href="https://code.google.com/apis/webfonts/docs/getting_started.html">Google's Webfonts API</a> essentially does the same thing as <code>@font-face</code>, it just does all the hard work for you, providing wider browser support.The major drawback to this method is the very small font library it uses. To make it work all you need to do is include the stylesheet + the font name.</p>
     <pre><code class="html">
-        &lt;link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">
+&lt;link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Font+Name">
     </code></pre>
     <p class="normalize">Then define a style for the selector you want to apply the font to:</p>
     <pre><code class="css">
-        CSS selector {
-            font-family: 'Font Name', serif;
-        }
+.css-selector {
+    font-family: 'Font Name', serif;
+}
     </code></pre>
     <h3>Webfont Loader</h3>
     <p>Another option Google offers is the <a href="https://code.google.com/apis/webfonts/docs/webfont_loader.html">Webfont Loader</a> which is a JavaScript library that allows for more control than the font API does. You can also use multiple webfont providers like Typekit. To use it include the script in your page:</p>
