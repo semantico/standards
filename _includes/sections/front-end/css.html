@@ -187,6 +187,42 @@ X-UA-Compatible: IE=edge,chrome=1
         <li>Default styles for links should be declared and different from the main text styling, and with differing styles for hover state.</li>
         <li>When styling links with underlines use <code>border-bottom</code> and some padding with <code>text-decoration: none;</code>. This just looks better.</li>
     </ul>
+    <!-- #### CSS3 SECTION #### -->
+    <!--========================*\
+     oh rly?    ya rly!  
+       \ ___,    ___ /   _,_  no rly?
+        {O,0}   {-.-}   {o,O} /
+        |)__)   |)~(|   (~~(|
+    -----"-"-----"-"-----"-"-----,_
+    =========================== -->
+    <h2>CSS3</h2>
+    <p>Design elements should be produced with CSS3 wherever possible. Please try to avoid using images for design effects, as the extra HTTP requests will add weight to slow down page load.</p>
+    <p>CSS3 layout features such as flexbox and css3 columns should generally be avoided because of our need to support legacy browsers. (This will change as the browser market changes over time)</p>
+    <h3>Progressive enhancement</h3>
+    <p>We can use tools such as <a href="http://modernizr.com/">Modernizr</a> to detect the cababilities of the browser and provide appropriate fallbacks or fix missing features with <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills">polyfills</a>. 
+    Polyfills often come at a cost of page performance, using extra javascript and sometimes even flash. So use with caution.</p>
+    <p><a href="http://dl.dropbox.com/u/228092/Factsheet-%20Where%20are%20my%20rounded%20corners.pdf">Where are my 
+        rounded corners?</a> by <a href="http://boagworld.com">Paul Boag</a> explains in plain English why pixel perfect designs and sites in older browsers are expensive and unnecessary.</p>
+    <h3>Vendor prefixes</h3>
+    <p>As CSS3 is still a working draft, many features have not been fully standaradised yet. This does not stop us from using them, it just means we have to be careful about implementation.</p>
+    <p>To use these CSS3 features in as many browsers as possible we need to embrace vendor prefixes. The easiest way to make sure we are using up to date vendor prefixes is by using a generator.</p>
+    <h4>Generators</h4>
+    <ul>
+        <li>For projects using <a href="http://lesscss.org/">Less</a>, <a href="http://twitter.github.com/bootstrap/less.html#mixins">Bootstrap's mixins.less</a> is a very good starting point containing many cross-browser CSS3 mixins.</li>
+        <li>For vanilla CSS using <a href="http://css3please.com/">css3please.com</a> will save you time and help to avoid cross browser errors.</li>
+    </ul>
+    <!-- #### LESS SECTION #### -->
+    <!--========================*\
+     oh rly?    ya rly!  
+       \ ___,    ___ /   _,_  no rly?
+        {O,0}   {-.-}   {o,O} /
+        |)__)   |)~(|   (~~(|
+    -----"-"-----"-"-----"-"-----,_
+    =========================== -->
+    <h2>Less</h2>
+    <p>We use <a href="http://lesscss.org/">Less</a> on larger projects to help manage CSS. We use Less over other CSS pre-processors because of it's compatibility with the Java eco-system.</p>
+    <p>Less provides variables, mixins, nesting, operations, colour functions and <a href="http://lesscss.org/">more</a> with a very similar syntax to native CSS.</p>
+    <p>When writing Less try to avoid using highly nested selectors, so that the rules can be easily reused elsewhere.</p>
     <!-- #### WEB TYPOGRAPHY SECTION #### -->
     <!--========================*\
      oh rly?    ya rly!  
