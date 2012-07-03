@@ -13,10 +13,6 @@ semantico.load = semantico.load || function () {
         return window.jQuery ? $(e).scrollTop().top : e.pageYOffset;
     };
 
-    $('h1,h2,h3,h4').each(function() {
-        this.id = '_' + toSelectorStr($(this).text());
-    });
-
     titles  = $('.intro h1:nth-child(1)');
     toc     = "";
     tocList = $('#toc');
@@ -34,6 +30,10 @@ semantico.load = semantico.load || function () {
     });
 
     if (tocList.length === 0) return;
+
+    $('h1,h2,h3,h4').each(function() {
+        this.id = '_' + toSelectorStr($(this).text());
+    });
 
     titles.each(function (i, el) {
         var $this, text, id, h2s, subs;
