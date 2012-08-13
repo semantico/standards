@@ -21,11 +21,23 @@ public class ClassNameHere {
 }
     </code></pre>
     <h2 id="packageAndImportStatements">Package and Import Statements</h2>
-    <p>The first non-comment line of most Java source files is a package statement. After that, import statements can follow. For example:</p>
+    <p>The first non-comment line of most Java source files is a package statement. After that, import statements can follow.</p>
+    <p>Imports should be sorted alphabetically and not grouped. Static imports should appear after a newline below the non-static imports.</p>
+    <p>Static imports should be avoided wherever possible as they can be confused with calls to instance methods. Unit tests &amp; mocks are the exception to this however
+    as most of the assertions are static methods. Assertion methods <strong>should</strong> be imported statically to make your tests more readable. e.g:</p>
     <figure class="pre-code">Package and Import Statements</figure>
     <pre><code class="java">
-package java.awt;
-import java.awt.peer.CanvasPeer;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.*;
     </code></pre>
     <h2 id="classAndInterfaceDeclarations">Class and Interface Declarations</h2>
     <p>The following describes the parts of a class or interface declaration, in the order that they should appear.</p>
