@@ -15,12 +15,12 @@ classMethod();             //OK
 AClass.classMethod();      //OK
 anObject.classMethod();    //AVOID!
     </code></pre>
-    <h2 id="numericalConstants">Numerical Constants</h2>
-    <p>Numerical constants (literals) should <b>not</b> be coded directly, except for -1, 0, and 1, which can appear in a for loop as counter values.</p>
-    <p>Use a singularly defined <a href="#constants">constant</a>!</p>
-    <h2 id="nonNumericalConstants">String Constants</h2>
-    <p>String constants (literals) should <b>not</b> be coded directly/hard-coded.</p>
-    <p>Use a singularly defined <a href="#constants">constant</a>!</p>
+    <h2 id="contants">Constants</h2>
+    <p>As a general rule, literals make code easier to read and follow. Constants should only be used to improve readability or maintainability</p>
+    <p>Readability can be improved when literal values have meaning other than their literal values. For example a giant regex that parses email addresses may not be immediately obvious.</p>
+    <p>Maintainability can be improved when a literal value which is likely to change is hard coded in multiple places. For example the default number of search-results per page.</p>
+    <h3 id="numericalConstants">Numerical Constants</h3>
+    <p>As defined above, when a numeric value is hard-coded in mulitple places, or is a 'magic number' (a number that has some meaning other than it's value) a numeric constant should be defined.</p>
     <h2 id="variableAssignments">Variable Assignments</h2>
     <p>Avoid using an object to access a class (static) variable or method. Use a class name instead. For example:</p>
     <figure class="pre-code">Avoid:</figure>
