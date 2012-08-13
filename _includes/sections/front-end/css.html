@@ -2,7 +2,6 @@
 <section id="css">
     <div class="intro has-icon">
         <h1>CSS</h1>
-        <p>The second component of a web page is the presentation information contained in the Cascading Style Sheet (<abbr title="Cascading Style Sheets">CSS</abbr>.) Web browsers successful implementation of CSS has given a whole generation of web authors site-wide control over the look and feel of their web sites.</p>
         <p>Just as the information on a web page is semantically described in the <a href="#markup">HTML Markup</a>, CSS describes all presentation aspects of the page via a description of its visual properties. CSS is powerful in that these properties are mixed and matched via identifiers to control the page's layout and visual characteristics through the layering of style rules (the "cascade").</p>
     </div>
     <h3>General Coding Principles</h3>
@@ -19,7 +18,7 @@
             </code></pre>
             </li>
         <li>Don't include styles inline in the document, either in a style tag or on the elements. It's harder to track down style rules.</li>
-        <li>Use <a href="http://necolas.github.com/normalize.css/">normalize.css</a> to make rendering more consistent across browsers.</li>
+        <li>Use <a href="http://necolas.github.com/normalize.css/">normalize.css</a> to make rendering more consistent across browsers. <small>(Both H5BP and Bootstrap incorporate this).</small></li>
         <li>Styles should be applied with classes, using elements and IDs in selectors should be avoided. This makes the CSS more reusable and cuts down on specificity.</li>
         <li>Understand <a href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">cascading and selector specificity</a>, but avoid relying on it.</li>
         <li>Keep selectors efficient and portable</li>
@@ -59,9 +58,9 @@
     <p>Chaining classes is <em>encouraged</em>, allowing for more modularity and reusability of components.</p>
     <pre><code class="html">
 &lt;ul class="inline-list breadcrumb">
-    &lt;li class="breadcrumb-item">Tier 1&lt;/li>
-    &lt;li class="breadcrumb-item">Tier 2&lt;/li>
-    &lt;li class="breadcrumb-item">Tier 3&lt;/li>
+    &lt;li>Tier 1&lt;/li>
+    &lt;li>Tier 2&lt;/li>
+    &lt;li>Tier 3&lt;/li>
 &lt;/ul>
     </code></pre>
     <h3>Naming Conventions for Selectors</h3>
@@ -83,28 +82,13 @@
     <p><a href="http://www.w3.org/TR/css3-selectors/#attribute-selectors">Attribute Selectors</a> are great for finding elements that have a specific attribute and/or specific value. Knowledge of regular expressions helps with attribute selectors. </p>
 <h4>Specificity</h4>
     <p>Browsers <a href="http://www.w3.org/TR/2009/PR-css3-selectors-20091215/">calculate a selector's specificity</a> to determine which CSS rule should apply. If two selectors apply to the same element, the one with the <strong>higher specificity wins</strong>.</p>
-    <p>IDs have a higher specificity than attribute selectors do, and class selectors have higher specificity than any number of element selectors. Always try to use IDs to increase the specificity. There are times when we may try to apply a CSS rule to an element and it does not work no matter what we try. This is likely because the specificity of the selector used is lower than another one and the properties of the higher one are taking precedence over those you want to apply. This is more common in working with larger more complex stylesheets. It isn't a big issue with smaller projects usually.</p>
-    <h5>Calculating specifiсity</h5>
-    <p>When working with a large and complex stylesheet it helps to know how to calculate the value of a selector's specificity, to save you time and to make your selectors more efficient.</p>
-    <p>Specificity is calculated by counting various components of your CSS and expressing them in a form (a,b,c,d).</p>
-    <ul>
-        <li>Element, Pseudo Element: d = 1 – (0,0,0,1)</li>
-        <li>Class, Pseudo class, Attribute: c = 1 – (0,0,1,0)</li>
-        <li>Id: b = 1 – (0,1,0,0)</li>
-        <li>Inline Style: a = 1 – (1,0,0,0)</li>
-    </ul>
-    <p>However, it may be better to use a specificity calculator.</p>
-    <ul>
-        <li><a href="">Specificity Calculator</a></li>
-        <li><a href="http://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/">Some things you should know about specificity</a></li>
-        <li><a href="http://www.brunildo.org/test/IEASpec.html#a">IE Specificity bugs</a></li>
-    </ul>
-    <p>Using <code>!important</code> overrides all specificity no matter how high it is. We like to avoid using it for this reason. Most of the time it is not necessary. Even if you need to override a selector in a stylesheet you don't have access to, there are usually ways to override it without using !important. Avoid using it if possible.</p>
+    <p>IDs have a higher specificity than attribute selectors do, and class selectors have higher specificity than any number of element selectors. It is important to understand specificity and the cascade, but by sticking to classes and limiting the amount of nesting we can simplify specificity and make CSS more reuseable.</p>
+    <p>Using <code>!important</code> overrides all specificity no matter how high it is. Try to avoid using it for this reason.</p>
     <h3>Pixels vs. Ems</h3>
-    <p>We use the <code>px</code> unit of measurement to define <code>font size</code>, because it offers absolute control over text. We realize that using the <code>em</code> unit for font sizing used to be popular, to accommodate for Internet Explorer 6 not resizing pixel based text. However, all major browsers (including <abbr title="Internet Explorer 7">IE7</abbr> and <abbr title="Internet Explorer 8">IE8</abbr>) now support text resizing of pixel units and/or full-page zooming. Since <abbr title="Internet Explorer 6">IE6</abbr> is largely considered deprecated, pixels sizing is preferred. Additionally, unit-less <code>line-height</code> is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the <code>font-size</code>.</p>
+    <p>We use the <code>px</code> unit of measurement to define <code>font size</code>, because it offers absolute control over text. Additionally, unit-less <code>line-height</code> is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the <code>font-size</code>.</p>
     <figure class="pre-code">Correct</figure>
     <pre><code class="css">
-#selector {
+.selector {
     font-size: 13px;
     line-height: 1.5;  /*  13 * 1.5 = 19.5 ~ Rounds to 20px. */
 }
@@ -112,7 +96,7 @@
     <figure class="pre-code">Incorrect</figure>
     <pre><code class="css">
 /*  Equivalent to 13px font-size and 20px line-height, but only if the browser default text size is 16px. */
-#selector {
+.selector {
     font-size: 0.813em;
     line-height: 1.25em;
 }
@@ -135,7 +119,7 @@
     *margin-left: 5px; /* targets IE7 and lower */
 }
     </code></pre>
-    <p>If you're using HTML5 (and the <a href="#h5bp">HTML5 Boilerplate</a>) we encourage the use of the <a href="http://www.modernizr.com/">Modernizer</a> JavaScript library and appending the no-js class to the <coe>html</code> element.</p>
+    <p>If you're using HTML5 (and the <a href="#h5bp">HTML5 Boilerplate</a>) we encourage the use of the <a href="http://www.modernizr.com/">Modernizer</a> JavaScript library and append the no-js class to the <coe>html</code> element.</p>
     <h4>Prevent Compatibility Mode</h4>
     <p>Sometimes <abbr title="Internet Explorer">IE</abbr> can have a mind of its own and will switch to compatibility mode without you knowing. Include the following in HTTP headers sent on responses containing html:</p>
     <pre><code class="http">
@@ -143,13 +127,9 @@ X-UA-Compatible: IE=edge,chrome=1
     </pre></code>
     <p>If using the H5BP please note that it includes this definition in the <code>&lt;head></code> section of the html, and will need to be removed as it will cause the <a href="https://github.com/h5bp/html5-boilerplate/issues/378">compatapility mode icon to appear</a> in IE when used with the<D-r> conditional html tags.</p>
 <h3>Shorthand</h3>
-    <p>In general, CSS shorthand is preferred because of its terseness, and the ability to later go back and add in values that are already present, such as the case with margin and padding. Developers should be aware of the <abbr title="Top Right Bottom Left">TRBL</abbr> acronym, denoting the order in which the sides of an element are defined, in a clock-wise manner: Top, Right, Bottom, Left. If <em>bottom</em> is undefined, it inherits its value from <em>top</em>. Likewise, if <em>left</em> is undefined, it inherits its value from <em>right</em>. If only the <em>top</em> value is defined, all sides inherit from that one declaration.</p>
-    <p class="normalize">For more on reducing stylesheet code redundancy, and using CSS shorthand in general:</p>
-    <ul>
-        <li><a href="http://qrayg.com/journal/news/css-background-shorthand">http://qrayg.com/journal/news/css-background-shorthand</a></li>
-        <li><a href="http://sonspring.com/journal/css-redundancy">http://sonspring.com/journal/css-redundancy</a></li>
-        <li><a href="http://dustindiaz.com/css-shorthand">http://dustindiaz.com/css-shorthand</a></li>
-    </ul>
+    <p>In general, CSS shorthand is preferred because of its terseness.
+    Developers should be aware of the <abbr title="Top Right Bottom Left">TRBL</abbr> acronym, denoting the order in which the sides of an element are defined, in a clock-wise manner: Top, Right, Bottom, Left. If <em>bottom</em> is undefined, it inherits its value from <em>top</em>. Likewise, if <em>left</em> is undefined, it inherits its value from <em>right</em>. If only the <em>top</em> value is defined, all sides inherit from that one declaration.</p>
+    <p>In many situations shorthand is not appropriate. If you are overriding just one value, you should not repeat the other values.</p>
     <h3>Images</h3>
     <ul>
         <li>Images used for design features should be avoided where possible. CSS3 features like border-radius, gradients and box-shadow should be used wherever possible.</li>
@@ -162,30 +142,22 @@ X-UA-Compatible: IE=edge,chrome=1
             </ul>
         </li>
     </ul>
-<h3>Color Management</h3>
-    <ul>
-        <li>Verify that all members on your team have consistent color management settings.</li>
-           <ul>
-               <li>Any given two monitors most likely display the colors differently, but sRGB color profile must be your default.</li>
-               <li>When you open files in Photoshop, pay attention to Color Profile warnings and notify team members when Photoshop is suggesting to convert an image to a different profile.</li> 
-            </ul>
-        <li>Never embed a color profile in your images.
-            <ul>
-                <li>When you Save for Web and Devices from Photoshop, be sure to uncheck &quot;Embed Color Profile.&quot;</li>
-            </ul> </li>
-    </ul>
     <hr />
     <h3>General Text and Font Styling</h3>
     <h4>Headings</h4>
     <ul>
-        <li>Define default styling for <code>h1-h6</code> headings including headings as links. It's helpful to declare these at the top of your CSS document, and modify them with as necessary for consistency across the site.</li>
+        <li>Define default styling for <code>h1-h6</code> headings including headings as links.</li>
         <li>Headings should show a hierarchy indicating different levels of importance from the top down starting with h1 having the largest font size.</li>
-        <li>SEO: To get a rough idea of how your page hierarchy is organized and read, use your Developer Toolbar to disable CSS. You'll end up with a text-based view of all your <code>h1-h6</code> tags, <code>strong</code>, <code>em</code>, etc.</li>
-    </ul>
-    <h4>Links</h4>
-    <ul>
-        <li>Default styles for links should be declared and different from the main text styling, and with differing styles for hover state.</li>
-        <li>When styling links with underlines use <code>border-bottom</code> and some padding with <code>text-decoration: none;</code>. This just looks better.</li>
+        <li>Just because two headlines share a font size and colour in a design does not mean they should be the same type of heading. Instead define classes with your heading definitions so that you can set the style of a title with a class:
+        <pre><code class="css">
+h1, .h1 {
+    /* styles */
+}
+h2, .h2 {
+    /* styles */
+}
+        </code></pre>
+        </li>
     </ul>
     <!-- #### CSS3 SECTION #### -->
     <!--========================*\
@@ -232,13 +204,10 @@ X-UA-Compatible: IE=edge,chrome=1
     -----"-"-----"-"-----"-"-----,_
     =========================== -->
     <h2>Web Typography</h2>
-    <p>The use of custom fonts and typefaces on the web has been growing more popular the past few years. with native browser support on the rise and several supporting services and APIs now available there is real momentum in this space. Each of these approaches have their own pros and cons. Before a project kicks off it's best to do research into technology and licensing limitations to choose the proper approach for the specific project.</p>
-    <p>All of these approaches have drawbacks in code overhead, development time and performance (clock and perceived). Familiarizing yourself with these issues and communicating them to the other members of the team and to the client will save significant problems later on in the project.</p>
     <p>Listed here are some popular methods of embed custom fonts, list in the order of our preference for implementation.</p>
     <h3>@font-face</h3>
     <p>The <a href="http://www.w3.org/TR/2011/WD-css3-fonts-20110324/#font-face-rule">@font-face at-rule</a> allows you to define custom fonts. It was first defined in the CSS2 specification, but was removed from CSS2.1. Currently, it's a draft recommendation for CSS3.</p>
-    <p>Our first and most preferred choice for customizing fonts on the web is @font-face, simply because it is part of the CSS Fonts Module working draft which means it will continue to grow in popularity as browser support grows, and ease of use for it improves as it becomes more stable.</p>
-    <p>For now, when using <code>@font-face</code> it's recommended to declare the source for each font format. This is important if you want it to work in the most number of browsers, though it is not a requirement for use.</p>
+    <p>For now, when using <code>@font-face</code> it's recommended to declare the source for each font format. This is important if you want it to work in the largest number of browsers, though it is not a requirement for use.</p>
     <p class="normalize">The font formats included in the specification are:</p>
     <ul>
         <li><strong>woff</strong>: WOFF (Web Open Font Format)</li>
@@ -262,7 +231,6 @@ X-UA-Compatible: IE=edge,chrome=1
     /* etc */
 }
     </code></pre>
-    <p>Here's a <a href="http://www.thecssninja.com/demo/css_fontface/">working demo</a> using this version of implementation.</p>
     <h4>Cross-Browser Compatibility</h4>
     <p>Safari, <abbr title="Internet Explorer version 6-9">IE 6-9</abbr>, <abbr title="Internet Explorer Compatibility Modes">IE 9 Compatibility Modes</abbr>, Firefox, Chrome, iOS, Android, Opera</p>
     <hr />
@@ -366,22 +334,4 @@ X-UA-Compatible: IE=edge,chrome=1
     <h3>Font Licensing</h3>
     <p>Even though you can transform just about any font into a web font file, you should still make sure it is legally okay for you to do so. Many foundries have updated their conditions to specify how their fonts can be used on the web. View <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&item_id=UNESCO_Font_Lic">Font Licensing and Protection Details</a> for more information.</p>
     <hr />
-    <h3>Specifications &amp; Font File Formats</h3>
-    <ul>
-        <li><a href="http://www.w3.org/TR/1998/REC-CSS2-19980512/fonts.html#font-descriptions">CSS 2 Fonts</a> &ndash; May 1998 (Obsolete)</li>
-        <li><a href="http://www.w3.org/TR/css3-fonts/">CSS 3 Fonts</a> &ndash; Working Draft 2009 </li>
-        <li><a href="http://www.w3.org/TR/css3-fonts/">CSS Fonts Module</a> &ndash; W3C Working Draft March 2011</li>
-        <li><a href="http://www.w3.org/TR/WOFF/">WOFF Font Format</a> &ndash; Working Draft 2010</li>
-        <li><a href="http://www.w3.org/TR/SVG/fonts.html">SVG Font Format</a></li>
-        <li><a href="http://www.w3.org/Submission/EOT/">Embedded Open Type (EOT) File Format</a></li>
-        <li><a href="http://www.microsoft.com/typography/otspec/">Microsoft Open Type Specification</a></li>
-        <li><a href="http://www.adobe.com/devnet/opentype/afdko/topic_feature_file_syntax.html#9.e">OpenType Feature File Specification</a> </li>
-        <li><a href="http://developer.apple.com/fonts/TTRefMan/">Apple True Type Reference</a> </li>
-    </ul>
-    <h3>Use CSS3</h3>
-    <p>You can do a lot of new things with the added features in the CSS3 spec, many of which are not yet fully supported by all the major browsers. That doesn't 
-    mean they can't be used today. For the things that aren't supported there are fallback libraries or other 'polyfills' which you can use to fill in the holes where
-    browsers may be lacking some support of a new feature.</p>
-    <p>There are also browser specific properties or prefixes that can be used to style things too. We recommend using <a href="http://prefixr.com">Prefixr.com</a> to 
-    make sure you include all the different prefixed browser properties for the sake of cross-browser support.</p>
 </section>
