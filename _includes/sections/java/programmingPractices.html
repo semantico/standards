@@ -40,20 +40,17 @@ a = b + c;
 d = a + r;
     </code></pre>
     <h2 id="parentheses">Parentheses</h2>
-    <p>It is generally a good idea to use parentheses liberally in expressions involving mixed operators to avoid operator
-        precedence problems.</p>
-    <p>Even if the operator precedence seems clear to you, it might not be to others-you shouldn't assume that other
-        programmers know precedence as well as you do.</p>
+    <p>Alongside using parentheses to control operator presidence, they should also be used to logically group sub-expressions in larger boolean expressions.</p>
     <figure class="pre-code">Examples:</figure>
     <pre><code class="java">
-if (a == b && c == d)     // AVOID!
-if ((a == b) && (c == d)) // RIGHT
+if (a == b &amp;&amp; c == d)     // AVOID!
+if ((a == b) &amp;&amp; (c == d)) // RIGHT
     </code></pre>
     <h2 id="expressionsConditional">Expressions before `?' in the Conditional Operator</h2>
     <p>If an expression containing a binary operator appears before the ? in the ternary ?: operator, it should be
         parenthesized.</p>
     <figure class="pre-code">Example:</figure>
     <pre><code class="java">
-(x >= 0) ? x : -x;
+(x &lt;= 0) ? x : -x;
     </code></pre>
 </section>
