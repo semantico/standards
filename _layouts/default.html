@@ -72,7 +72,7 @@
 
             window._gaq = [['_setAccount', 'UA-7877119-7'], 
                 ['_trackPageview'], ['_trackPageLoadTime'], ['_setSiteSpeedSampleRate', 10]];
-            var zep     = navigator.userAgent.indexOf("MSIE") == -1;
+            var zep     = "__proto__" in window;
 
             yepnope([{
                     test:     zep,
@@ -86,7 +86,7 @@
                     load:     '{{ site.host }}/standards/static/js/standards.js'
                 }]);
             // GA is loaded at the same time as the other scripts because it has no dependencies
-            yepnope(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
+            yepnope('//www.google-analytics.com/ga.js');
 
         })();
     </script>
