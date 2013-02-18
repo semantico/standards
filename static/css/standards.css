@@ -902,6 +902,7 @@ code {
     width:                 48.7551867219915%;
     float:                 left;
     margin-left:           2.489626556017%;
+    margin-bottom:         18px;
     text-align:            center;
     -webkit-box-sizing:    border-box; /* Safari/Chrome, other WebKit */
        -moz-box-sizing:    border-box;    /* Firefox, other Gecko */
@@ -920,7 +921,7 @@ code {
     -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .1);
             box-shadow: 0 0 4px rgba(0, 0, 0, .1);
 }
-.btn:first-child {
+.btn:nth-child(2n-1) {
     margin: 0;
 }
 .btn-language {
