@@ -31,6 +31,12 @@
 
 
         {% if page.sidebar == true %}
+            <div class="container clearfix">
+                <div id="content" role="main" class="content content-thin">
+                    {{ content }}
+                </div> <!-- /#content -->
+            </div> <!-- /.container -->
+
             <div id="fixed-nav" class="container container-over">
                 <nav id="page-navigation" class="aside">
                     <h2 class="h1 no-margin">Table of Contents</h2>
@@ -39,12 +45,6 @@
                     </ul>
                 </nav>
             </div> <!-- /#fixed-nav -->
-
-            <div class="container clearfix">
-                <div id="content" role="main" class="content content-thin">
-                    {{ content }}
-                </div> <!-- /#content -->
-            </div> <!-- /.container -->
         {% else %}
             <div class="container">
                 <div id="content" role="main" class="content">
