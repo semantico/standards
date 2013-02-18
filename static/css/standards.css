@@ -567,11 +567,11 @@ body {
 a {
     text-decoration: none;
     color:           #000;
-    border-bottom:   1px dashed #EF6B00;
+    border-bottom:   1px dashed #F78F1E;
 }
 
 a:hover {
-    color:               #EF6B00;
+    color:               #F78F1E;
     border-bottom-style: solid;
 }
 
@@ -587,7 +587,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 h1, .h1 {
-    color:       #EF6B00;
+    color:       #F78F1E;
     font-size:   24px;
     line-height: 36px;
 }
@@ -639,7 +639,7 @@ hr {
 
 .top-bar {
     padding:       9px 0;
-    border-bottom: 5px solid #EF6B00;
+    border-bottom: 5px solid #F78F1E;
     margin-bottom: 18px;
     background:    #fff;
 }
@@ -775,7 +775,7 @@ hr {
 }
 
 .toc-sub {
-    border-top:   1px dashed #EF6B00;
+    border-top:   1px dashed #F78F1E;
     margin-left:  18px;
     padding-left: 0;
 }
@@ -841,12 +841,12 @@ li.social-li {
 }
 
 .page-footer a:hover {
-    color: #EF6B00;
+    color: #F78F1E;
 }
 
 .download-link:after {
     content: "\2193";
-    color:   #EF6B00;
+    color:   #F78F1E;
 }
 
 .pre-code {
