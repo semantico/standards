@@ -748,7 +748,7 @@ hr {
     background: #fff;
     overflow: auto;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .toc {
