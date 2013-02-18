@@ -746,7 +746,9 @@ hr {
     width:   24.24242424%;
     padding: 18px 1.51515151%;
     background: #fff;
-    overflow: scroll;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .toc {
