@@ -651,6 +651,10 @@ hr {
     position:      relative;
 }
 
+.container .container {
+    padding: 0;
+}
+
 .bar-item {
     float: left;
 }
