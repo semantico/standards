@@ -653,6 +653,7 @@ hr {
 
 .container .container {
     padding: 0;
+    pointer-events: none;
 }
 
 .bar-item {
