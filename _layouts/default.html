@@ -78,9 +78,9 @@
             yepnope([{
                     test:     zep,
                     yep:      '{{ site.host }}/standards/static/js/zepto.js',
-                    nope:     '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js',
+                    nope:     '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
                     complete: function () {
-                        !zep && !window.jQuery && yepnope('{{ site.host }}/standards/static/js/jquery-1.7.2.min.js');
+                        !zep && !window.jQuery && yepnope('{{ site.host }}/standards/static/js/jquery-1.9.1.min.js');
                     }
                 },
                 {
