@@ -736,6 +736,7 @@ hr {
 .container-over .aside {
     position: relative;
     z-index:  1;
+    pointer-events: auto;
 }
 
 .container-over-fixed {
