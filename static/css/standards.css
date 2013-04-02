@@ -881,6 +881,22 @@ code {
             border-radius: 2px;
 }
 
+.extra {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #D0D0D0;
+}
+
+    .extra img {
+        display: block;
+        margin: 0 auto 10px;
+    }
+
+    .extra figcaption {
+        padding-top: 10px;
+        border-top: 1px solid #D0D0D0
+    }
+
 /*** hompage ***/
 
 .row {
