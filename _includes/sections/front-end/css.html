@@ -6,8 +6,8 @@
     </div>
     <h3>General Coding Principles</h3>
     <ul>
-        <li>Add CSS through external files, minimizing the # of files, if possible. It should always be in the HEAD of the document.</li>
-        <li>Use the LINK tag to include, <a href="http://blog.amodernfable.com/2008/01/21/thoughts-on-linking-to-stylesheets/">never the @import.</a>
+        <li>Add CSS through external files, minimizing the number of files, if possible. It should always be in the HEAD of the document.</li>
+        <li>Use the <code>link</code> tag to include, <a href="http://blog.amodernfable.com/2008/01/21/thoughts-on-linking-to-stylesheets/">never the @import.</a>
             <figure class="pre-code">Including a stylesheet</figure>
             <pre><code class="html">
 &lt;link rel="stylesheet" type="text/css" href="myStylesheet.css" />
@@ -22,7 +22,7 @@
         <li>Styles should be applied with classes, using elements and IDs in selectors should be avoided. This makes the CSS more reusable and cuts down on specificity.</li>
         <li>Understand <a href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">cascading and selector specificity</a>, but avoid relying on it.</li>
         <li>Keep selectors efficient and portable</li>
-        <li><a href="https://github.com/csswizardry/CSS-Guidelines/blob/master/CSS%20Guidelines.md#selectors">Avoid heavily location-based selectors</a></li>
+        <li><a href="https://github.com/csswizardry/CSS-Guidelines/#selectors">Avoid heavily location-based selectors</a></li>
     </ul>
     <h3>CSS Box Model</h3>
     <p>Intimate knowledge and understanding of the CSS and browser-based box model is necessary for conquering the fundamentals of CSS layouts.</p>
@@ -39,7 +39,7 @@
 .this_is_also_bad {}
 .this-is-correct {}
     </code></pre>
-    <p>Single line CSS should be avoided because it can cause issues with version control. </p>
+    <p>Single line CSS should be avoided because it's hard to diff in git.</p>
     <pre><code class="css">
 /* incorrect */
 .masthead { position: relative; max-width: 990px; margin: auto; }
@@ -64,9 +64,9 @@
 &lt;/ul>
     </code></pre>
     <h3>Naming Conventions for Selectors</h3>
-    <p>It is always preferable to name something, be it an ID or a class, by the nature of <strong>what it is</strong> rather than by <strong>what it looks like</strong>. For instance, a class name of <code>big-blue-text</code> for a special note on a page is quite meaningless if it has been changed to have a small red text color. Using a more intelligent convention such as <code>note-text</code> is better because when the  visual style changes it still makes sense.</p>
+    <p>It is always preferable to pick a class name, by the nature of <strong>what it is</strong> rather than by <strong>what it looks like</strong>. For instance, a class name of <code>big-blue-text</code> for a special note on a page is quite meaningless if it has been changed to have a small red text color. Using a more intelligent convention such as <code>note-text</code> is better because when the  visual style changes it still makes sense.</p>
     <h3>OOCSS</h3>
-    <p>Instead of building dozens of unique components, try and spot repeated design patterns abstract them; build these skeletons as base ‘objects’ and then peg classes onto these to extend their styling for more unique circumstances.</p>
+    <p>Instead of building dozens of unique components, try and spot repeated design patterns abstract them; build these skeletons as base 'objects' and then peg classes onto these to extend their styling for more unique circumstances.</p>
     <p>If you have to build a new component split it into structure and skin; build the structure of the component using very generic classes so that we can reuse that construct and then use more specific classes to skin it up and add design styles.</p>
     <p><b>More information:</b></p>
     <ul>
@@ -85,7 +85,7 @@
     <p>IDs have a higher specificity than attribute selectors do, and class selectors have higher specificity than any number of element selectors. It is important to understand specificity and the cascade, but by sticking to classes and limiting the amount of nesting we can simplify specificity and make CSS more reuseable.</p>
     <p>Using <code>!important</code> overrides all specificity no matter how high it is. Try to avoid using it for this reason.</p>
     <h3>Pixels vs. Ems</h3>
-    <p>We use the <code>px</code> unit of measurement to define <code>font size</code>, because it offers absolute control over text. Additionally, unit-less <code>line-height</code> is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the <code>font-size</code>.</p>
+    <p>We use the <code>px</code> unit of measurement to define <code>font-size</code>, because it offers absolute control over text. Additionally, unit-less <code>line-height</code> is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the <code>font-size</code>.</p>
     <figure class="pre-code">Correct</figure>
     <pre><code class="css">
 .selector {
@@ -119,28 +119,24 @@
     *margin-left: 5px; /* targets IE7 and lower */
 }
     </code></pre>
-    <p>If you're using HTML5 (and the <a href="#h5bp">HTML5 Boilerplate</a>) we encourage the use of the <a href="http://www.modernizr.com/">Modernizer</a> JavaScript library and append the no-js class to the <coe>html</code> element.</p>
+    <p>If you're using HTML5 (and the <a href="#h5bp">HTML5 Boilerplate</a>) we encourage the use of the <a href="http://www.modernizr.com/">Modernizer</a> JavaScript library and append the <code>no-js</code> class to the <coe>html</code> element.</p>
     <h4>Prevent Compatibility Mode</h4>
     <p>Sometimes <abbr title="Internet Explorer">IE</abbr> can have a mind of its own and will switch to compatibility mode without you knowing. Include the following in HTTP headers sent on responses containing html:</p>
     <pre><code class="http">
 X-UA-Compatible: IE=edge,chrome=1
     </pre></code>
-    <p>If using the H5BP please note that it includes this definition in the <code>&lt;head></code> section of the html, and will need to be removed as it will cause the <a href="https://github.com/h5bp/html5-boilerplate/issues/378">compatapility mode icon to appear</a> in IE when used with the<D-r> conditional html tags.</p>
+    <p>If using the H5BP please note that it includes this definition in the <code>&lt;head></code> section of the html, and will need to be removed as it will cause the <a href="https://github.com/h5bp/html5-boilerplate/issues/378">compatibility mode icon to appear</a> in IE when used with the<D-r> conditional html tags.</p>
 <h3>Shorthand</h3>
     <p>In general, CSS shorthand is preferred because of its terseness.
     Developers should be aware of the <abbr title="Top Right Bottom Left">TRBL</abbr> acronym, denoting the order in which the sides of an element are defined, in a clock-wise manner: Top, Right, Bottom, Left. If <em>bottom</em> is undefined, it inherits its value from <em>top</em>. Likewise, if <em>left</em> is undefined, it inherits its value from <em>right</em>. If only the <em>top</em> value is defined, all sides inherit from that one declaration.</p>
-    <p>In many situations shorthand is not appropriate. If you are overriding just one value, you should not repeat the other values.</p>
+    <p>In some situations shorthand is not appropriate. If you are overriding just one value, you should not repeat the other values.</p>
     <h3>Images</h3>
     <ul>
-        <li>Images used for design features should be avoided where possible. CSS3 features like border-radius, gradients and box-shadow should be used wherever possible.</li>
+        <li>Images used for design features should be avoided where possible. CSS3 features like <code>border-radius</code>, <code>gradients</code> and <code>box-shadow</code> should be used wherever possible.</li>
         <li>For repeating images, use <a href="http://www.iandevlin.com/blog/2010/03/webdev/fading-issue-with-repeating-background-transparent-image-in-internet-explorer">something larger than 1x1 pixels</a></li>
         <li>You should never be using spacer images.</li>
         <li>Use <a href="#_leverage-css-sprites">CSS sprites generously</a>. They make hover states easy, improve page load time, and reduce carbon dioxide emissions.</li>
-        <li>Typically, all images should be sliced with a transparent background (PNG8). All should be cropped tightly to the image boundaries.
-            <ul>
-                <li>However, the logo should always have a background matte and have padding before the crop. (so other people can hotlink to the file)</li>
-            </ul>
-        </li>
+        <li>Typically, all images should be sliced with a transparent background (PNG8). All should be cropped tightly to the image boundaries.</li>
     </ul>
     <hr />
     <h3>General Text and Font Styling</h3>
