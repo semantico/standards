@@ -200,134 +200,19 @@ h2, .h2 {
     -----"-"-----"-"-----"-"-----,_
     =========================== -->
     <h2>Web Typography</h2>
-    <p>Listed here are some popular methods of embed custom fonts, list in the order of our preference for implementation.</p>
-    <h3>@font-face</h3>
-    <p>The <a href="http://www.w3.org/TR/2011/WD-css3-fonts-20110324/#font-face-rule">@font-face at-rule</a> allows you to define custom fonts. It was first defined in the CSS2 specification, but was removed from CSS2.1. Currently, it's a draft recommendation for CSS3.</p>
-    <p>For now, when using <code>@font-face</code> it's recommended to declare the source for each font format. This is important if you want it to work in the largest number of browsers, though it is not a requirement for use.</p>
-    <p class="normalize">The font formats included in the specification are:</p>
+    <p>Hosted services are preferred over self hosting fonts. But sometimes we need to self host when using custom fonts.</p>
+    <h3>Self hosted</h3>
     <ul>
-        <li><strong>woff</strong>: WOFF (Web Open Font Format)</li>
-        <li><strong>ttf</strong>: TrueType</li>
-        <li><strong>ttf</strong>, <strong>otf</strong>: OpenType</li>
-        <li><strong>eot</strong>: Embedded OpenType</li>
-        <li><strong>svg</strong>, <strong>svgz</strong>: SVG Font</li>
+        <li>Use <a href="http://www.fontsquirrel.com/fontface/generator/">Font Squirrel's online <code>@font-face</code> generator</a> and inline the <code>@font-face</code> CSS definitions in your own CSS.</li>
+        <li>Send the correct <a href="https://github.com/h5bp/html5-boilerplate/blob/master/.htaccess#L149">mime types</a></li>
+        <li>If font files are stored on a seperate domain send <a href="https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS">CORS</a> headers.</li>
     </ul>
-    <h4>Bulletproof @font-face</h4>
-    <p>For full cross-browser compatibility use Fontsprings' new <a href="http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax">bulletproof @font-face syntax</a> (<em>latest version as of 2/21/11</em>).</p>
-    <pre><code class="css">
-@font-face {
-    font-family: 'MyFontFamily';
-    src: url('myfont-webfont.eot');                     /* IE9 Compat Modes */
-    src: url('myfont-webfont.eot?iefix') format('eot'),    /* IE6-IE8 */
-       url('myfont-webfont.woff') format('woff'),        /* Modern Browsers */
-       url('myfont-webfont.ttf') format('truetype'),        /* Safari, Android, iOS */
-       url('myfont-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
-    font-weight: normal;
-    font-style: italic;
-    /* etc */
-}
-    </code></pre>
-    <h4>Cross-Browser Compatibility</h4>
-    <p>Safari, <abbr title="Internet Explorer version 6-9">IE 6-9</abbr>, <abbr title="Internet Explorer Compatibility Modes">IE 9 Compatibility Modes</abbr>, Firefox, Chrome, iOS, Android, Opera</p>
-    <hr />
-    <h4>Tips for @font-face</h4>
+    <h3>Hosted services</h3>
     <ul>
-        <li>Use <a href="http://www.fontsquirrel.com/fontface/generator/">Font Squirrel's online <code>@font-face</code> generator</a> and inline the <code>@font-face</code> definitions in your own CSS.</li>
-        <li>IE 6–8 will only accept a TrueType font packaged as an EOT.</li>
-        <li>font-weight and font-style have different meanings within <code>@font-face</code>. 
-            Declarations where <code>font-weight:bold;</code> means this is the bold version of this typeface, rather than apply bold to this text</li>
-        <li><a href="http://paulirish.com/2010/font-face-gotchas/">@font-face gotchas</a></li>
+        <li><a href="http://www.google.com/fonts/">Google fonts</a> hosts many free fonts. Just include the <code>link</code> tag in the header and start using the font in your CSS.</li>
+        <li><a href="https://typekit.com/">Typekit</a> hosts a much wider range of fonts that are not free. It requires a paid for account and JavaScript to work.</li>
     </ul>
-    <strong>Pros</strong>
-    <ul>
-        <li>Easy to implement</li>
-        <li>Large variety of APIs</li>
-        <li>Customizable</li>
-        <li>Easy to add to elements</li>
-        <li>Nothing required besides CSS</li>
-        <li>Is currently part of the working draft of CSS Fonts Module 3</li>
-    </ul>
-    <strong>Cons</strong>
-    <ul>
-        <li>Limited browser support if used improperly</li>
-        <li>Some older versions of modern browsers (Chrome, Opera) don't always render well. Text can have rough edges. <em>**I have not been able to confirm whether this is still an issue now or not.</em></li>
-    </ul>
-    <hr />    
-    <h3>Google WebFonts API &amp; Font Loader</h3>
-    <p>There are two options available with <a href="https://code.google.com/apis/webfonts/">Google Webfonts</a>. Both options have their downsides of course but they can be just as good to use as <code>@font-face</code>, it all depends on a projects needs.</p>
-    <h4>Webfonts API</h4>
-    <p><a href="https://code.google.com/apis/webfonts/docs/getting_started.html">Google's Webfonts API</a> essentially does the same thing as <code>@font-face</code>, it just does all the hard work for you, providing wider browser support.The major drawback to this method is the very small font library it uses. To make it work all you need to do is include the stylesheet + the font name.</p>
-    <pre><code class="html">
-&lt;link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Font+Name">
-    </code></pre>
-    <p class="normalize">Then define a style for the selector you want to apply the font to:</p>
-    <pre><code class="css">
-.css-selector {
-    font-family: 'Font Name', serif;
-}
-    </code></pre>
-    <h3>Webfont Loader</h3>
-    <p>Another option Google offers is the <a href="https://code.google.com/apis/webfonts/docs/webfont_loader.html">Webfont Loader</a> which is a JavaScript library that allows for more control than the font API does. You can also use multiple webfont providers like Typekit. To use it include the script in your page:</p>
-    <pre><code class="html">
-&lt;script>
-    WebFontConfig = { google: { families: [ 'Tangerine', 'Cantarell' ]} };
-    (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + 
-                  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-    })();
-&lt;/script>
-    </code></pre>
-    <p class="normalize">Including the webfont.js file this way is faster if not already using the Ajax APIs. Otherwise you should use this:</p>
-    <pre><code class="html">
-&lt;script src="https://www.google.com/jsapi">&lt;/script>
-&lt;script>
-    google.load("webfont", "1");
-    google.setOnLoadCallback(function() {
-        WebFont.load({ google: { families: [ 'Tangerine', 'Cantarell' ]} });
-    });
-&lt;/script>
-    </code></pre>
-    <p>By using the Webfont Loader you have more ability to customize things including the use of more fonts, not just those in the Google Webfont library which is not large. However, it then requires you to load JavaScript, sacrificing one thing for another.</p>
-    <strong>Pros</strong>
-    <ul>
-        <li>Very easy to implement</li>
-        <li>Wide browser support</li>
-        <li>Can be combined with Typekit</li>
-        <li>Customizable when using the font loader</li>
-        <li>API does the same thing as <code>@font-face</code></li>
-    </ul>
-    <strong>Cons</strong>
-    <ul>
-        <li>Very small font library if using the font API</li>
-        <li>Using the Webfont Loader requires the use of JavaScript to work</li>
-        <li>Most browsers will load the rest of the page first, leaving a blank space where the text would be, or otherwise show the fallback option if one exists, until the page fully loads.</li>
-        <li>Some fonts in the webfont library render poorly on Windows</li>
-    </ul>
-    <hr />
-    <h3>Typekit</h3>
-    <p>Using <a href="https://typekit.com">Typekit</a> has its advantages and shouldn't be completely disregarded when choosing which method to use for adding custom fonts to a web site. It has strong platform integration and is a scalable and popular service. It can be used with Google Webfonts and is easily added to WordPress, Posterous, Typepad, and other similar CMS powered sites.</p>
-    <p>However, full use of <a href="https://typekit.com/plans">Typekit doesn't come without a cost</a>. If you need to use it on more than 2 sites or on a site that gets a high amount of pageviews you will need to pay an annual cost of $49.99, and for sites with a million+ pageviews it costs twice as much. Though, you probably have the money to cover the cost if you're getting over a million pageviews. If not then you may want to rethink your business model.</p>
-    <strong>Pros</strong>
-    <ul>
-        <li>Large font library, including Adobe fonts</li>
-        <li>Easy implementation</li>
-        <li>Google Webfont API and blogging platform integration</li>
-        <li>Free plan has limits but doesn't expire</li>
-    </ul>
-    <strong>Cons</strong>
-    <ul>
-        <li>Requires JavaScript to use</li>
-        <li>Limited font library access without paying</li>
-        <li>Free and cheapest plans only allow use on 1-2 web sites and 2-5 fonts per site</li>
-        <li>You have to pay to use it on more than 1 site</li>
-    </ul>
-    <hr />
     <h3>Font Licensing</h3>
-    <p>Even though you can transform just about any font into a web font file, you should still make sure it is legally okay for you to do so. Many foundries have updated their conditions to specify how their fonts can be used on the web. View <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&item_id=UNESCO_Font_Lic">Font Licensing and Protection Details</a> for more information.</p>
+    <p>Even though you can transform just about any font into a web font file, you should still make sure it is legally OK for you to do so. Many foundries have updated their conditions to specify how their fonts can be used on the web. View <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&item_id=UNESCO_Font_Lic">Font Licensing and Protection Details</a> for more information.</p>
     <hr />
 </section>
