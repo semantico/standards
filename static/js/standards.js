@@ -35,6 +35,11 @@ semantico.load = semantico.load || function () {
         this.id = '_' + toSelectorStr($(this).text());
     });
 
+    var hash = window.location.hash;
+    if (hash !== "" && $(hash).length) {
+        window.scrollTo(0, $(hash).offset().top);
+    }
+
     titles.each(function (i, el) {
         var $this, text, id, h2s, subs;
         $this = $(el);
