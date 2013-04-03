@@ -31,7 +31,7 @@ semantico.load = semantico.load || function () {
 
     if (tocList.length === 0) return;
 
-    $('h1,h2,h3,h4').each(function() {
+    $('h1,h2').each(function() {
         this.id = '_' + toSelectorStr($(this).text());
     });
 
