@@ -56,11 +56,15 @@ for(var i=0;i&lt;arr.length;i++){
     </code></pre>
     <h3>Variables</h3>
     <p>All JavaScript variables shall be written in either completely lowercase letter or camelCase. The one exception to this are Constructor functions, which are capitalized by tradition.</p>
+    <h2>Files</h2>
+    <h3><abbr title="Content Delivery Networks">CDNs</abbr></h3>
+    <p>A CDN serves content to end-users with high availability and high performance. We recommend using <a href="https://developers.google.com/speed/libraries/">Google Hosted Libraries</a> for the latest version of jQuery (always link to a full version number).</p>
+    <p>Other libraries and plugins are best included inside the <code>plugins.js</code> file, with the exception of <a href="http://www.mathjax.org/">MathJax</a>. We use the <a href="http://docs.mathjax.org/en/latest/start.html#mathjax-cdn">MathJax CDN</a> because of the size of the library and the sheer number of files need to be managed.</p>
     <h3>plugins.js</h3>
     <p>Plugins.js is meant to hold all of a sites plugin code. Instead of linking to many different files, we can improve performance by including plugin code directly in this one file. There can and should be exceptions to this usage. An extremely large plugin only used on one rarely visited page, for example, might be better off in a separate download, only accessed on the target page. Most of the time, however, it's safe to just paste in minified versions of all your plugins here for easy access. </p>
-    <h4>Script.js</h4>
+    <h3>script.js</h3>
     <p>Script.js is meant to hold your site or application code. Again, this isn't always the best solution as larger teams and or larger, more feature rich projects can really benefit from breaking out application code into module or feature specific files. For smaller sites, simpler applications, and initial prototyping, however, dropping your work into scripts.js makes sense.</p>
-    <h3>Binding events</h3>
+    <h2>Binding events</h2>
     <p>Never use <code>onclick</code>, <code>onsubmit</code> or <code>onblur</code> attributes in your markup, instead assign event listeners unobtrusively. The easiest way to do this is with jQuery.</p>
     <pre><code class="js">
 $('.some-element').on('click', callback);
@@ -86,7 +90,7 @@ $('#containing-element button').on('click', callback);
         <li><strong>Internet Explorer 8-10</strong>: <a href="http://msdn.microsoft.com/en-us/library/dd565625(v=VS.85).aspx">Developer Tools</a></li>
     </ul>
     <h2>CoffeScript</h2>
-    <p><a href="http://coffeescript.org/">CoffeeScript</a> is a little language that compiles into JavaScript. It is nothing more than syntactic sugar, and is "just JavaScript".</p>
+    <p><a href="http://coffeescript.org/">CoffeeScript</a> is a little language that compiles into JavaScript. It is nothing more than syntactic sugar, and is <i>"just JavaScript"</i>.</p>
     <h3>Whitespace</h3>
     <ul>
         <li>Avoid extraneous whitespace immediately inside parentheses, brackets or braces</li>
