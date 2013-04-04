@@ -85,4 +85,31 @@ $('#containing-element button').on('click', callback);
         <li><strong>Internet Explorer 6-7</strong>: <a href="http://microsoft.com/downloads/details.aspx?familyid=E59C3964-672D-4511-BB3E-2D5E1DB91038">Developer Toolbar</a>, <a href="http://www.my-debugbar.com/wiki/CompanionJS/HomePage">Companion.JS</a></li>
         <li><strong>Internet Explorer 8-10</strong>: <a href="http://msdn.microsoft.com/en-us/library/dd565625(v=VS.85).aspx">Developer Tools</a></li>
     </ul>
+    <h2>CoffeScript</h2>
+    <p><a href="http://coffeescript.org/">CoffeeScript</a> is a little language that compiles into JavaScript. It is nothing more than syntactic sugar, and is "just JavaScript".</p>
+    <h3>Whitespace</h3>
+    <ul>
+        <li>Avoid extraneous whitespace immediately inside parentheses, brackets or braces</li>
+        <li>Avoid extraneous whitespace immediately before a comma</li>
+        <li>Always surround binary operators with a single space on either side (e.g. <code>=</code>, <code>+=</code>, <code>==</code>, <code>&gt;</code>, <code>&lt;</code>, <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, etc.)</li>
+    </ul>
+    <h3>Naming conventions</h3>
+    <ul>
+        <li>Use <code>camelCase</code> (with a leading lowercase character) to name all variables, methods, and object properties.</li>
+        <li>Use <code>CamelCase</code> (with a leading uppercase character) to name all classes. </li>
+        <li>For constants, use all uppercase with underscores.</li>
+        <li>For methods and variables that are intended to be private start with an underscore <code>_privateMethod: -&gt;</code>
+    </ul>
+    <h3>Functions</h3>
+    <p>Do not use parentheses when declaring functions that take no arguments.</p>
+    <pre><code class="coffee">
+bar = -> # Yes
+bar = () -> # No
+    </code></pre>
+    <h3>Strings</h3>
+    <p>Use string interpolation instead of string concatenation</p>
+    <pre><code class="coffee">
+"this is an #{adjective} string" # Yes
+"this is an " + adjective + " string" # No
+    </code></pre>
 </section>
